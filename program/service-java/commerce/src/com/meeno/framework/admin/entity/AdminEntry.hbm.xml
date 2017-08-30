@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-7-24 12:13:49 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.meeno.framework.admin.entity">
+	<class name="AdminEntry" table="mn_admin_entry">
+		<id name="id" type="java.lang.Long" column="ENTRY_ID">
+			<generator class="native">
+	        </generator>
+		</id>
+        <property name="controller" type="java.lang.String">
+            <column name="ENTRY_CONTROLLER" />
+        </property>
+        <property name="route" type="java.lang.String">
+            <column name="ENTRY_ROUTE" />
+        </property>
+        <property name="jsArr" type="java.lang.String">
+            <column name="ENTRY_JS_ARR" />
+        </property>
+        <property name="isNav" type="java.lang.String">
+            <column name="ENTRY_IS_NAV" />
+        </property>
+        <property name="icon" type="java.lang.String">
+            <column name="ENTRY_ICON" />
+        </property>
+        <property name="title" type="java.lang.String">
+            <column name="ENTRY_TITLE" />
+        </property>
+        <property name="params" type="java.lang.String">
+            <column name="ENTRY_PARAMS" />
+        </property>
+        <property name="parentId" type="java.lang.Long">
+            <column name="ENTRY_PARENT_ID" />
+        </property>
+        <property name="url" type="java.lang.String">
+            <column name="ENTRY_URL" />
+        </property>
+        <property name="templateUrl" type="java.lang.String">
+            <column name="ENTRY_TEMPLATE_URL" />
+        </property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,91 @@
+
+<div class="container">
+    <div>
+        <div class="title">
+            <i class="title-icon ion-grid"></i>
+            <b>产品管理</b>
+            <div class="title-btn">
+                <a class="btn btn-default ripple" ng-click="onClickAdd()"><i class="ti-plus"></i><span>添加</span></a>
+            </div>
+        </div>
+        <!--search-->
+        <!--<div class="search">-->
+        <!--<div class="search-item">-->
+        <!--<div class="search-single-input">-->
+        <!--<label class="wh-60" >学号:</label>-->
+        <!--<span class="search-input">-->
+        <!--<input type="text" ng-model="searchObj.sno"/>-->
+        <!--</span>-->
+        <!--</div>-->
+
+        <!--<a ng-click="onClickSearch()"><i class="ti-search"></i></a>-->
+        <!--</div>-->
+
+        <!--<div class="search-item">-->
+        <!--<div class="search-single-click">-->
+        <!--<div class="search-click-lf">品牌：</div>-->
+        <!--<div class="search-click-li">-->
+        <!--<span>haha</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="search-item">-->
+        <!--<div class="search-single-click">-->
+        <!--<div class="search-click-lf">品牌：</div>-->
+        <!--<div class="search-click-li">-->
+        <!--<span>haha</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <div class="list-content">
+
+            <div class="table-box">
+
+                <div class="table-scroll">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>产品编号</th>
+                            <th>产品图片</th>
+                            <th>产品名称</th>
+                            <th>产品品牌</th>
+                            <th>发布时间</th>
+                            <th>显示</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in dataModel.partsProductList">
+                            <td ng-bind="item.index"></td>
+                            <td ng-bind="item.code"></td>
+                            <td>
+                                <i class="table-img" style="background-image: url({{item.displayImg}});"></i>
+                            </td>
+                            <td ng-bind="item.productName"></td>
+                            <td ng-bind="item.brandName"></td>
+                            <td ng-bind="item.createTime"></td>
+                            <td>
+                                <span class="btn btn-xs" ng-class="{true:'btn-success', false:'btn-white'}[item.staClass]" ng-bind="item.statusValue"></span>
+                            </td>
+                            <td>
+                                <a class="btn btn-white" ng-click="onClickToGroupListDetails(item.id,item.productName)">产品列表</a>
+                                <a class="btn btn-default ripple" ng-click="onClickToGroupDetail(item.id)">查看</a>
+                                <a class="btn btn-danger ripple" ng-click="onClickModGoodGroup(item.id)">修改</a>
+                                <a class="btn btn-warning ripple" ng-click="upperLowerGoodItem(item.staClass,item.id)" ng-bind="item.statuBtnVal">下架</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table-empty isempty="isEmpty"></table-empty>
+            </div>
+
+            <my-pagination page-option="option"></my-pagination>
+
+        </div>
+    </div>
+
+</div>

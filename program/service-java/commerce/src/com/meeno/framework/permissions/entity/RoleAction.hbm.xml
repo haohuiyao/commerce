@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.framework.permissions.entity">
+	<class name="RoleAction" table="mnu_role_action">
+		<id name="id" type="java.lang.Long" column="ID">
+			<generator class="native">
+	        </generator>
+		</id>
+		
+		<many-to-one name="role" lazy="false" class="com.meeno.framework.permissions.entity.Role">
+			<column name="ROLEID" />
+		</many-to-one>
+		<many-to-one name="action" lazy="false" class="com.meeno.framework.permissions.entity.Action">
+			<column name="ACTIONID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

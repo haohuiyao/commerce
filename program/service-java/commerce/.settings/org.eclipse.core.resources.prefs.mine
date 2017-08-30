@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//WebContent/wp_admin/app/bower_components=UTF-8
+encoding//WebContent/wp_admin/app/bower_components/banner/dr.banner.html=UTF-8
+encoding//WebContent/wp_admin/app/bower_components/product/dr.product.html=UTF-8
+encoding//WebContent/wp_admin/app/modules=UTF-8
+encoding//WebContent/wp_admin/app/modules/action/modal.action.html=UTF-8
+encoding//WebContent/wp_admin/app/modules/after_sale/after.sale.address.html=UTF-8
+encoding//WebContent/wp_admin/app/modules/audit/audit.pay.html=UTF-8
+encoding//WebContent/wp_admin/app/modules/goods/good.shop.html=UTF-8
+encoding//WebContent/wp_admin/app/modules/modal/modal.addAdmin.html=UTF-8
+encoding/<project>=UTF-8

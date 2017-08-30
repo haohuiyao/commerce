@@ -1,0 +1,36 @@
+<!--
+    @管理员详情模态框
+    @create by daipengpeng
+    @time 2017/07/18 20:00:00
+-->
+<div class="modal" id="adminDetail">
+    <!--主体-->
+    <div class="modal-main">
+        <!--模态框头部-->
+        <div class="modal-header">
+            <h2 ng-bind="dataModel.modalTitle">添加管理员</h2>
+            <span></span>
+        </div>
+        <!--模态框内容-->
+        <div class="modal-body">
+
+            <!--管理员名称-->
+            <form-input form-obj="formObj.adminName" form-model="dataModel.adminName"></form-input>
+
+            <!--管理员登录密码-->
+            <form-input form-obj="formObj.loginPwd" form-model="dataModel.loginPwd"></form-input>
+
+            <!--确认密码-->
+            <form-input form-obj="formObj.confirmPwd" form-model="dataModel.confirmPwd"></form-input>
+
+            <form-select form-obj="formObj.adminType" form-model="dataModel.adminType"></form-select>
+
+
+        </div>
+        <!--模态框底部-->
+        <div class="modal-bottom">
+            <a class="ripple" ng-click="onClickSubmitAdminForm()">保存</a>
+        </div>
+    </div>
+
+</div>

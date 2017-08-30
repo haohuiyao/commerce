@@ -1,0 +1,50 @@
+<!--
+    @修改密码模态框
+    @create by daipengpeng
+    @time 2017/07/12 20:00:00
+-->
+<div class="modal" id="modPwd">
+    <!--主体-->
+    <div class="modal-main">
+        <!--模态框头部-->
+        <div class="modal-header">
+            <h2>修改密码</h2>
+            <span></span>
+        </div>
+        <!--模态框内容-->
+        <div class="modal-body">
+
+            <!--旧密码-->
+            <form-input form-obj="formObj.oldPwd" form-model="dataModel.oldPwd"></form-input>
+
+            <!--新密码-->
+            <form-input form-obj="formObj.newPwd" form-model="dataModel.newPwd"></form-input>
+
+            <!--确认密码-->
+            <form-input form-obj="formObj.confirmPwd" form-model="dataModel.confirmPwd"></form-input>
+            <!--<div class="modal-item">-->
+                <!--<div class="f modal-title">旧密码：</div>-->
+                <!--<div class="modal-input-full">-->
+                    <!--<input type="text" class="form-control" ng-model="userObj.oldPWD"/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="modal-item">-->
+                <!--<div class="f modal-title">新密码：</div>-->
+                <!--<div class="modal-input-full">-->
+                    <!--<input type="password" class="form-control" ng-model="userObj.newPWD"/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="modal-item">-->
+                <!--<div class="f modal-title">再次输入：</div>-->
+                <!--<div class="modal-input-full">-->
+                    <!--<input type="password" class="form-control" ng-model="userObj.confirmNewPWD"/>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <!--模态框底部-->
+        <div class="modal-bottom">
+            <a class="ripple" ng-click="onClickSubmitModPwd()">保存</a>
+        </div>
+    </div>
+
+</div>

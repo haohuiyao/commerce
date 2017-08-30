@@ -1,0 +1,51 @@
+<div class="container">
+
+    <!--titles-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>产品分类</b>
+        <div class="title-btn">
+            <a class="btn btn-default ripple" ng-click="onClickAddClassify()"><i class="ti-plus"></i><span>添加</span></a>
+        </div>
+    </div>
+
+    <div class="list-content">
+
+        <div class="table-box">
+
+            <div class="table-scroll">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>分类名称</th>
+                        <th>分类图片</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in dataModel.classifyList">
+                        <td ng-bind="item.index"></td>
+                        <td ng-bind="item.name"></td>
+                        <td>
+                            <i class="table-img" style="background-image: url({{item.imgUrl}});"></i>
+                        </td>
+                        <td>
+                            <a class="btn btn-default ripple" ng-click="onClickModClassify(item)">修改</a>
+                            <!--<a class="btn btn-white ripple" ng-click="onClickGetDetail(item)">查看</a>-->
+                            <a class="btn btn-danger ripple" ng-click="onClickDelClassify(item.id)">删除</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table-empty isempty="isEmpty"></table-empty>
+        </div>
+
+        <my-pagination page-option="option"></my-pagination>
+
+    </div>
+
+    <div ng-include="'modules/product/modal/modal.editProductClassify.html'"></div>
+
+</div>

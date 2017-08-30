@@ -1,0 +1,12 @@
+<div class="add-mul-img-con">
+    <form method="post" enctype="multipart/form-data" action="">
+		<span ng-repeat="item in arr track by $index" style="background-image: url({{item}});">
+			<i ng-click="deleteItem($index)"></i>
+		</span>
+        <a class="add-img-btn" href="javascript:void(0);">
+            <img src="build/images/public/btn-up-load.png" />
+            <p>上传图片</p>
+            <input type="file" name="file" multiple="multiple" multiple onchange="angular.element(this).scope().imgUpload(this.files)"/>
+        </a>
+    </form>
+</div>

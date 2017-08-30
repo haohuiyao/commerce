@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.framework.user.entity">
+	<class name="BaseUser" table="mnu_base_user">
+		<id name="id" type="java.lang.Long" column="USER_ID">
+			<generator class="native">
+	        </generator>
+		</id>
+		<property name="name" type="java.lang.String" column="NAME" length="32" />
+		<property name="gender" type="java.lang.String" column="GENDER" length="8" />
+		<property name="createTime" type="java.sql.Timestamp" column="CREATE_TIME" />
+		<property name="userType" type="java.lang.String" column="USER_TYPE" length="2" />
+		<property name="groupId" type="java.lang.Long" column="GROUP_ID" />
+		<many-to-one name="account" column="ACCT_UUID" class="com.meeno.framework.passport.entity.MNAccount">
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+
+.excavator-model{
+    overflow: hidden;
+    padding: 10px 15px;
+}
+
+.excavator-model-item{
+    float: left;
+    height: 32px;
+    border: 1px solid #d9d9d9;
+    line-height: 32px;
+    padding: 0 20px;
+    margin: 15px 15px 0 0;
+    position: relative;
+}
+
+.excavator-model-item i{
+    display: block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: -7px;
+    right: -7px;
+    cursor: pointer;
+    background-image: url("../../../../build/images/public/del.png");
+}

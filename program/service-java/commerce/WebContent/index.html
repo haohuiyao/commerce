@@ -1,0 +1,500 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link href="resources/bootstrap.css" rel="stylesheet" />
+<meta charset="utf-8">
+<script type="text/javascript" src="resources/jquery-2.1.0.js"></script>
+<script language="JavaScript">
+	var methods = {
+		// 公用接口
+		//"common/clearMemcache" : {"说明":"清除缓存"},
+
+		//管理员接口
+		"管理员模块" : {},
+		"admin/loginNormal.do" : {
+			"Data" : '{"username" : "admin", "password" : "admin"}',
+			"说明" : "管理员登录"
+		},
+
+		"admin/getAdminList.do" : {
+			"Data" : ' {"pageSize" : "5", "pageIndex" : "0"}',
+			"说明" : "获取管理员列表"
+		},
+
+		"admin/addAdmin.do" : {
+			"Data" : '{"username" : "", "password" : "", "groupId" : ""}',
+			"说明" : "新增管理员"
+		},
+
+		"admin/modAdmin.do" : {
+			"Data" : '{"id" : "", "username" : "", "password" : "", "groupId" : ""}',
+			"说明" : "修改管理员"
+		},
+
+		"admin/delAdmin.do" : {
+			"Data" : '{"ids" : "[]"}',
+			"说明" : "删除管理员"
+		},
+
+		// 内容相关
+		/* product相关 */
+		"product 分类" : {},
+		"商品分类" : {},
+		"category/addCategory.action" : {
+			"Data" : '{"name":"", "imgUrl":"","abbreviation":"","parentId":"","paramsTempletId":""}',
+			"说明" : "新增分类"
+		},
+		"category/editCategory.action" : {
+			"Data" : '{"categoryId":"1","name":"", "imgUrl":"","abbreviation":"","parentId":"","paramsTempletId":""}',
+			"说明" : "管理员编辑商品分类信息"
+		},
+		"category/getAllCategories.do" : {
+			"Data" : '{"pageIndex":"", "pageSize":"","parentId":""}',
+			"说明" : " 获取分类列表"
+		},
+		"category/getAllChildCategory.do" : {
+			"Data" : '{"pageIndex":"", "pageSize":"","parentId":""}',
+			"说明" : " 获取子类分类列表"
+		},
+		"category/delCategory.action" : {
+			"Data" : '{"categoryId":""}',
+			"说明" : "删除分类 一级分类 逻辑删除并下架product,sku 二级分类 无product:物理删除 否则逻辑删除"
+		},
+
+		"商品品牌" : {},
+		"machineBrand/addBrand.action" : {
+			"Data" : ' {"name":"","imgUrl":"","abbreviation":""}',
+			"说明" : "管理员新增商品品牌"
+		},
+		"machineBrand/findMachineBrandList.do" : {
+			"Data" : ' {"pageSize":"","pageIndex":""}',
+			"说明" : "获取挖机品牌列表"
+		},
+		"machineBrand/delBrand.action" : {
+			"Data" : '{"brandId":""}',
+			"说明" : "删除品牌 有product 逻辑删除 product sku,否则物理删除"
+		},
+		"machineBrand/editBrand.action" : {
+			"Data" : '{"brandId":"","name":"", "imgUrl":"","abbreviation":""}',
+			"说明" : "编辑品牌"
+		},
+		"machineBrand/editCategoryBrand.action" : {
+			"Data" : '{"categoryId":[], "brandId":"1"}',
+			"说明" : "编辑品牌分类"
+		},
+		"machineBrand/getBrandByCategory.do" : {
+			"Data" : '{"id":"1"}',
+			"说明" : "根据分类获取品牌列表"
+		},
+		"machineBrand/getCategoryByBrand.do" : {
+			"Data" : '{"id":"1"}',
+			"说明" : "根据品牌获取分类列表"
+		},
+
+		"参数模板" : {},
+		"teamplate/addTemplateParam.do" : {
+			"Data" : '{"name":"", "content":""}',
+			"说明" : "管理员添加模板参数"
+		},
+		"teamplate/findTemplateList.do" : {
+			"Data" : '{"condition":"", "pageIndex":"", "pageSize":""}',
+			"说明" : "根据条件获取参数模板列表"
+		},
+		"teamplate/getTemplateDetail.do" : {
+			"Data" : '{"templateId":""}',
+			"说明" : "获取参数模板详情"
+		},
+		"teamplate/delTeamplate.do" : {
+			"Data" : '{}',
+			"说明" : "删除参数模板----------------------"
+		},
+		"teamplate/editTemplateParam.do" : {
+			"Data" : '{"templateId":"", "name":"", "content":""}',
+			"说明" : "修改参数模板"
+		},
+
+		"商品货源" : {},
+		"source/addSource.do" : {
+			"Data" : '{"sourceName":""}',
+			"说明" : "添加货源信息"
+		},
+		"source/findSourceList.do" : {
+			"Data" : '{"pageSize":"","pageIndex":""}',
+			"说明" : "获取货源列表"
+		},
+		"source/delSource.do" : {
+			"Data" : '',
+			"说明" : "删除货源列表-----------------------"
+		},
+		"source/editSource.do" : {
+			"Data" : '{"id":"","sourceName":""}',
+			"说明" : "修改货源信息"
+		},
+
+		"运费模板" : {},
+		"franking/addFranking.action" : {
+			"Data" : '{"name":"","postage":"","pattern":"","dispatching":"","baseWeight":"","basePrice":"","addWeight":"","addPrice":"","scope":""}',
+			"说明" : "添加运费模板"
+		},
+		"franking/findFrankingList.action" : {
+			"Data" : '',
+			"说明" : "获取运费列表"
+		},
+		"franking/delFranking.do" : {
+			"Data" : '',
+			"说明" : "删除运费列表-----------------------"
+		},
+		"franking/editFranking.action" : {
+			"Data" : '{"id":"","name":"","postage":"","pattern":"","dispatching":"","baseWeight":"","basePrice":"","addWeight":"","addPrice":"","scope":""}',
+			"说明" : "修改运费模板"
+		},
+
+		"产品组" : {},
+		"productManager/addProduct.do" : {
+			"Data" : '{"name":"","detail":"","summary":"", "place":"","paramsValue":"","code":"","cost":"","displayImg":"","picture":"","common":"","currency":"","volume":"","weight":"","carriageId":"","paramTemplateId":"","brandId":"","sourceId":""}',
+			"说明" : "新增产品组"
+		},
+		"productManager/findProductList.do" : {
+			"Data" : '{"condition":{"title":"","brandId":"","categoryId":""},"status":"","pageIndex":"", "pageSize":""}',
+			"说明" : "获取产品组"
+		},
+		"productManager/putOutProduct.do" : {
+			"Data" : '{"id":""}',
+			"说明" : "下架产品组"
+		},
+		"productManager/putUpProduct.do" : {
+			"Data" : '{"id":""}',
+			"说明" : "上架产品组"
+		},
+		"productManager/editProduct.do" : {
+			"Data" : '{"id":"","name":"","detail":"","summary":"", "place":"","paramsValue":"","code":"","cost":"","displayImg":"","picture":"","common":"","currency":"","volume":"","weight":"","carriageId":"","paramTemplateId":"","brandId":"","sourceId":""}',
+			"说明" : "编辑产品组"
+		},
+
+		"productManager/addSku.do" : {
+			"Data" : '{"productId":"","paramTemplateId":"","paramValue":"","adaptation":"","picture":"","detail":"","brandId":"","skuName":"","weight":"","displayImg":"","summary":"","volumn":""}',
+			"说明" : "新增sku"
+		},
+		"productManager/findSkuList.do" : {
+			"Data" : '{"condition":{"title":"","productBrand":"","categoryId":"","productId":""},"status":"", "pageIndex":"", "pageSize":""}',
+			"说明" : "获取skuList"
+		},
+		"productManager/putOutSku.do" : {
+			"Data" : '{"id":""}',
+			"说明" : "下架sku"
+		},
+		"productManager/putUpSku.do" : {
+			"Data" : '{"id":""}',
+			"说明" : "上架sku"
+		},
+		"productManager/editSku.do" : {
+			"Data" : '{"id":"","productId":"","paramTemplateId":"","paramValue":"","adaptation":"","picture":"","detail":"","brandId":"","skuName":"","weight":"","displayImg":"","summary":"","volumn":""}',
+			"说明" : "修改sku"
+		},
+
+		"productManager/reindexHSearch.do" : {
+			"Data" : '{}',
+			"说明" : "重生成hibernate search索引"
+		},
+
+		"产品关系相关" : {},
+		"productManager/saveProductRel.do" : {
+			"Data" : '{"objType":"","objId":"","rel":[{"objType":"","relType":"","id":""},{"objType":"","relType":"","id":""}]}',
+			"说明" : "保存产品关系"
+		},
+
+		"productManager/findProductRel.do" : {
+			"Data" : '{"relType":"","objType":"","objId":"","targetType":""}',
+			"说明" : "查询产品关系"
+		},
+
+		"newProduct" : {},
+		"machineManager/addMachineProduct.action" : {
+			"Data" : '{"name":"","detail":"","summary":"", "place":"","paramsValue":"","code":"","cost":"","displayImg":"","picture":"","common":"","currency":"","volume":"","weight":"","categoryId":"","paramTemplateId":"","brandId":"","sourceId":""}',
+			"说明" : "新增产品组"
+		},
+		"machineManager/addMachineSku.action" : {
+			"Data" : '{"productId":"","skus":[{"name":""}]}',
+			"说明" : "新增挖机sku"
+		},
+		"machineManager/getMachineDetail.do" : {
+			"Data" : '{"id":""}',
+			"说明" : "获取挖机组详情"
+		},
+		"machineManager/findProductList.do" : {
+			"Data" : '{"condition":{"title":"","brandId":"","categoryId":""},"status":"","pageIndex":"", "pageSize":""}',
+			"说明" : "获取产品组"
+		},
+		"machineManager/putOutProduct.action" : {
+			"Data" : '[]',
+			"说明" : "下架产品组"
+		},
+		"machineManager/putUpProduct.action" : {
+			"Data" : '[]',
+			"说明" : "上架产品组"
+		},
+		"machineManager/editProduct.action" : {
+			"Data" : '{"id":"","name":"","detail":"","summary":"", "place":"","paramsValue":"","code":"","cost":"","displayImg":"","picture":"","common":"","currency":"","volume":"","weight":"","carriageId":"","categoryId":"","paramTemplateId":"","brandId":"","sourceId":""}',
+			"说明" : "编辑产品组"
+		},
+
+		"machineManager/addSku.action" : {
+			"Data" : '{"productId":"","paramTemplateId":"","paramValue":"","adaptation":"","picture":"","detail":"","brandId":"","skuName":"","weight":"","displayImg":"","summary":"","volumn":"","rel":[{"objtype":"","id":""},{"objtype":"","id":""}]}',
+			"说明" : "新增sku"
+		},
+		"machineManager/findSkuList.do" : {
+			"Data" : '{"condition":{"title":"","productBrand":"","categoryId":"","productId":""},"status":"", "pageIndex":"", "pageSize":""}',
+			"说明" : "获取skuList"
+		},
+		"machineManager/putOutSku.action" : {
+			"Data" : '{"id":""}',
+			"说明" : "下架sku"
+		},
+		"machineManager/putUpSku.action" : {
+			"Data" : '{"id":""}',
+			"说明" : "上架sku"
+		},
+		"machineManager/editSku.action" : {
+			"Data" : '{"id":"","productId":"","paramTemplateId":"","paramValue":"","adaptation":"","picture":"","detail":"","brandId":"","skuName":"","weight":"","displayImg":"","summary":"","volumn":""}',
+			"说明" : "修改sku"
+		},
+		"machineManager/findProductByBrand.do" : {
+			"Data" : '{"id":""}',
+			"说明" : "根据品牌获取商品"
+		},
+		"machineManager/getMachineProduct.do" : {
+			"Data" : '{"pageSize":"","pageIndex":""}',
+			"说明" : "获取挖机Product列表"
+		},
+		"machineManager/getMachineModel.do" : {
+			"Data" : '{"pageSize":"","pageIndex":"","condition":{"productId":""}}',
+			"说明" : "获取挖机Sku列表"
+		},
+		"productManager/addParts.action" : {
+			"Data" : '{"name":"","detail":"","summary":"", "place":"","paramsValue":"","code":"","displayImg":"","picture":"","common":"","volume":"","weight":"","categoryId":"","paramTemplateId":"","brandId":"","brand":[{"brandId":"","rel":[{"objType":"","objId":""},{"objType":"","objId":""}]}]}',
+			"说明" : "新增产品配件"
+		},
+		"productManager/editParts.action" : {
+			"Data" : '{"id":"","name":"","detail":"","summary":"", "place":"","paramsValue":"","code":"","displayImg":"","picture":"","common":"","currency":"","volume":"","weight":"","categoryId":"","paramTemplateId":"","brandId":"","brand":[{"brandId":"","rel":[{"objType":"", "id":"","relType":""}]}]}',
+			"说明" : "修改产品配件"
+		},
+		"productManager/getPartsDetailById.do" : {
+			"Data" : '{"id":""}',
+			"说明" : "获取配件组详情"
+		},
+		"productManager/getPartsProduct.do" : {
+			"Data" : '{"pageSize":"","pageIndex":""}',
+			"说明" : "获取挖机配件Product列表"
+		},
+		"productManager/getPartsSku.do" : {
+			"Data" : '{"pageSize":"","pageIndex":"","condition":"{"productId":""}"}',
+			"说明" : "获取挖机配件Sku列表"
+		},
+		"productManager/getPartsSkuDetail.do" : {
+			"Data" : '{"skuId":""}',
+			"说明" : "获取挖机配件sku详情"
+		},
+		"productManager/editPartsSku.action" : {
+			"Data" : '{"skuId":"","rel":[{"objType":"","id":""},{"objType":"","id":""}],"paramsValue":"","picture":"","displayImg":"","detail":""}',
+			"说明" : "修改挖机配件sku"
+		},
+
+		"product/frontFindSkuList.do" : {
+			"Data" : '{"condition":{"keyword":"关键字", "categoryId":"分类Id","sourceId":"货源Id","pRelArr":[{"objType2":"关联obj类型","objId2":"关联objId"}]},"pageIndex":"", "pageSize":""}',
+			"说明" : "根据条件获取sku列表"
+		},
+		"product/frontGetPartsBrand.do" : {
+			"Data" : '',
+			"说明" : "获取配件品牌列表"
+		},
+		"product/frontGetMachineBrand.do" : {
+			"Data" : '',
+			"说明" : "获取挖机品牌列表"
+		},
+		"product/frontGetPartsCategory.do" : {
+			"Data" : '',
+			"说明" : "获取配件分类列表"
+		},
+		"product/frontFindSkuDetail.do" : {
+			"Data" : '{"skuId":""}',
+			"说明" : "根据条件获取sku详情"
+		},
+
+		"产品关系相关" : {},
+		"model/saveProductRel.do" : {
+			"Data" : '{"relType":"","objType":"","objId":"","rel":[{"objtype":"","id":""},{"objtype":"","id":""}]}',
+			"说明" : "保存产品关系"
+		},
+		"model/findProductRel.do" : {
+			"Data" : '{"relType":"","objType":"","objId":"","targetType":""}',
+			"说明" : "查询产品关系"
+		},
+	};
+
+	$(document).ready(
+			function() {
+				var i = 0;
+				for ( var m in methods) {
+					i++;
+					var option = $("<option></option>");
+					option.val(m);
+					option.text(m);
+					$("#postAPI").append(option);
+
+					var params = methods[m];
+					var row = "<tr><td class='item' id='"+i+"'><a href='#'>"
+							+ m + "</a></td>";
+					if (params["说明"] != null) {
+						row += "<td>" + params["说明"] + "</td>";
+					} else {
+						row += "<td>" + "" + "</td>";
+					}
+
+					/*
+					if (params["备注"] != null)
+					{
+					    row += "<td>" + params["备注"] + "</td>";
+					}
+					else
+					{
+					    row += "<td>" + "" + "</td>";
+					}
+					 */
+
+					row += "</tr>";
+					$("#apiDesc tr:last").after(row);
+				}
+				$(".item").click(function() {
+					var a = $(this).text();
+					$("#postAPI").val(a);
+					tronClick(a);
+				});
+			})
+
+	function checkAction() {
+		// $("#form").attr("action", "/" + $("#postAPI").val());
+		$("#form").attr("action", "/commerce/" + $("#postAPI").val());
+		$("#submit").submit();
+	}
+
+	function onSelectionChange() {
+		$("#inputs").empty();
+
+		onSelectMethod($("#postAPI").val());
+	}
+
+	function tronClick(val) {
+		$("#inputs").empty();
+
+		onSelectMethod(val);
+	}
+
+	function onSelectMethod(method) {
+		var params = methods[method];
+		var hasFile = false;
+		var useGet = false;
+		for ( var p in params) {
+			var input = $("<input></input>");
+			if (typeof (params[p]) == "object") {
+				// 是对象，则其中必然有类型：type
+				if (params[p]["type"] == "file") {
+					input.attr("type", "file");
+					input.attr("name", p);
+					input.text(p);
+					$("#inputs").append(p + ": ");
+					$("#inputs").append(input);
+					$("#inputs").append("<br/>");
+
+					hasFile = true;
+				} else if (params[p]["type"] == "multiFile") {
+					input.attr("type", "file");
+					input.attr("name", p);
+					input.attr("multiple", "multiple");
+					input.text(p);
+					$("#inputs").append(p + ": ");
+					$("#inputs").append(input);
+					$("#inputs").append("<br/>");
+
+					hasFile = true;
+				} else {
+					alert("Type not implemented: " + "param: " + p + ", Type: "
+							+ params[p]["type"]);
+				}
+			} else if (p == "备注") {
+				var label = $("<label></label>");
+				label.text(params[p]);
+				$("#inputs").append(label);
+			} else if (p == "说明") {
+
+			} else if (p == "GET") {
+				if (params[p] == 1) {
+					useGet = true;
+				}
+			} else {
+				input.attr("type", "text");
+				input.attr("name", p);
+				input.attr("style", "width: 1500px");
+				input.text(p);
+				input.val(params[p]);
+				$("#inputs").append(p + ": ");
+				$("#inputs").append(input);
+				$("#inputs").append("<br/>");
+			}
+		}
+
+		// 如果有文件，则需要修改为post
+		if (hasFile) {
+			$("#form").attr("method", "post");
+		} else {
+			if (useGet) {
+				$("#form").attr("method", "get");
+			} else {
+				$("#form").attr("method", "post");
+			}
+		}
+
+	}
+</script>
+<style>
+.item {
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+</style>
+</head>
+<body>
+	<div style="padding: 0px 10px">
+		<?php echo md5(uniqid())?>
+		<br />
+		<p>输入Post的API</p>
+		<select id="postAPI" style="width: 300px"
+			onchange="onSelectionChange()" class="form-control">
+			<option value="">请选择</option>
+		</select> <br />
+		<p>输入参数</p>
+		<form id="form" action="" method="get"
+			enctype="application/x-www-form-urlencoded;charset=UTF-8"
+			accept-charset="UTF-8">
+			<div id="inputs"></div>
+			<input id="submit" type="submit" value="提交" onclick="checkAction()"
+				class="btn btn-info" />
+		</form>
+		<br />
+		<table id="apiDesc" border="1" class="table">
+			<tr>
+				<th width="100px">API</th>
+				<th width="100px">说明</th>
+				<!--            <th width="200px">备注</th>-->
+
+			</tr>
+
+		</table>
+
+	</div>
+
+</body>
+</html>

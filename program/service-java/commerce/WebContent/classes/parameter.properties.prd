@@ -1,0 +1,10 @@
+format.date.style = yyyy-MM-dd
+format.time.style = yyyy-MM-dd HH:mm:ss
+
+app.system.code = default
+
+upload.imgs = http://101.200.204.214:80/
+upload.dir = C://ebusiness/
+ffmpeg.dir = C://pro_file/Windows64bit/bin/ffmpeg.exe
+
+isDebug = false

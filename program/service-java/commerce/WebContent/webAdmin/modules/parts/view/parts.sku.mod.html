@@ -1,0 +1,139 @@
+<!--
+    修改产品
+-->
+<link rel="stylesheet" href="modules/parts/assets/css/parts.css">
+
+<div class="container">
+
+    <!--title-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>产品修改</b>
+        <div class="title-btn">
+            <a class="btn btn-default ripple" ng-click="onClickSave()"><i class="ti-plus"></i><span>保存</span></a>
+        </div>
+    </div>
+
+    <h2 class="product-h2">基本信息</h2>
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productName" form-model="dataModel.productName"></form-input>
+            </div>
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productPlace" form-model="dataModel.productPlace"></form-input>
+            </div>
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-full">
+                <form-input form-obj="formObj.productSummary" form-model="dataModel.productSummary"></form-input>
+            </div>
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-full">
+                <form-input form-obj="formObj.productClassifyName" form-model="dataModel.productClassifyName"></form-input>
+                <!--<classify-select sel-id="dataModel.productClassify"></classify-select>-->
+            </div>
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productBrandName" form-model="dataModel.productBrandName"></form-input>
+                <!--<form-select form-obj="formObj.productBrand" form-model="dataModel.productBrand" reset="dataModel.resetBrand"></form-select>-->
+            </div>
+        </div>
+
+        <div class="form-li">
+
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productNumber" form-model="dataModel.productNumber"></form-input>
+            </div>
+
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productCommonName" form-model="dataModel.productCommonName"></form-input>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bg-color-fff mgt-3">
+
+        <div class="clear">
+            <span class="f mgt-1 mgl-1 mgr-1" ng-class="{true:'btnSel-act',false:'btnSel-item'}[dataModel.isCommonUse]" ng-click="isCommonUse()">通用</span>
+            <span class="f mgt-1 mgl-1 mgr-1" ng-class="{true:'btnSel-item',false:'btnSel-act'}[dataModel.isCommonUse]" ng-click="isCommonUse()">非通用</span>
+        </div>
+       <div ng-show="!dataModel.isCommonUse">
+           <div>
+               <a class="btn btn-default ripple mgt-2 mgl-3" ng-click="addMachine()"><i class="ti-plus"></i><span>添加机型</span></a>
+           </div>
+
+           <div class="clear" ng-repeat="item in dataModel.machineList">
+               <div class="f machine-del back-cover" ng-click="delMachine()"></div>
+               <div class="mgl-3">
+                   <machine-list machine-brand-id="item.brandId" rel-arr="item.rel"></machine-list>
+               </div>
+           </div>
+       </div>
+
+    </div>
+
+    <!--产品参数-->
+    <h2 class="product-h2">产品参数</h2>
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-api-select form-obj="formObj.paramTemplate" form-model="dataModel.paramTemplateId"></form-api-select>
+            </div>
+        </div>
+        <div>
+            <param-template template-id="dataModel.paramTemplateId" param-value="dataModel.paramValue" template-detail="dataModel.templateDetail"></param-template>
+        </div>
+
+    </div>
+
+    <!--产品图片-->
+    <h2 class="product-h2">产品图片</h2>
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container form-item-full">
+                <div class="form-item">
+                    <div class="form-title f">产品首图：</div>
+                    <div class="form-item-content">
+                        <upload-single url="dataModel.displayImage"></upload-single>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container w-880">
+                <div class="form-item">
+                    <div class="form-title f">产品轮播图：</div>
+                    <div class="form-item-content">
+                        <upload-multiple url="dataModel.imgUrl" maxnum="9"></upload-multiple>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container w-880">
+                <div class="form-item">
+                    <div class="form-title f">产品详情：</div>
+                    <div class="form-item-content">
+                        <ui-kindeditor ng-model="dataModel.detail"></ui-kindeditor>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-include="'modules/parts/modal/modal.editProductClassifyModel.html'"></div>
+
+</div>

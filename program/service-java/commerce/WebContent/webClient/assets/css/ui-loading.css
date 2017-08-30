@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+/*
+ * ==================================
+ *  loading页
+ * ==================================
+ */
+
+body{
+	background-image: url(../images/login/loading.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.load-time{
+	width: 50px;
+	height: 24px;
+	display: block;
+	position: fixed;
+	right: 15px;
+	top: 15px;
+	border-radius: 5px;
+	background: rgba(0,0,0,0.3);
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 24px;
+	font-size: 12px;
+}

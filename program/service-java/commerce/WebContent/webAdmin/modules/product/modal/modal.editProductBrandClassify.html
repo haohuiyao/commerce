@@ -1,0 +1,35 @@
+
+<!--
+    @编辑品牌分类
+    @create by daipengpeng
+    @time 2017/07/726
+-->
+<div class="modal" id="editBrandClassify">
+    <!--主体-->
+    <div class="modal-main">
+        <!--模态框头部-->
+        <div class="modal-header">
+            <h2>编辑品牌分类</h2>
+            <span></span>
+        </div>
+        <!--模态框内容-->
+        <div class="modal-body">
+
+            <!--分类-->
+            <div class="clear">
+                <span class="f mgt-1 mgl-1 mgr-1" ng-class="{true:'btnSel-act',false:'btnSel-item'}[item.isSel]" ng-click="selBrandClassify(item.categoryId)" ng-repeat="item in dataModel.classifyArr" ng-bind="item.name">通用</span>
+            </div>
+            <!--<div class="form-li">-->
+                <!--<div class="form-item-container form-item-full">-->
+                    <!--<form-api-select form-obj="formObj.brandClassify" form-model="dataModel.brandClassify"></form-api-select>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        </div>
+        <!--模态框底部-->
+        <div class="modal-bottom">
+            <a class="ripple" ng-click="submitEditBrandClassify()">保存</a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,51 @@
+<!--
+    产品参数模板列表
+    create by daipengpeng
+    2017/07/20
+-->
+
+<div class="container">
+
+    <!--titles-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>参数模板</b>
+        <div class="title-btn">
+            <a class="btn btn-default ripple" ng-click="onClickAdd()"><i class="ti-plus"></i><span>添加</span></a>
+        </div>
+    </div>
+
+    <div class="list-content">
+
+        <div class="table-box">
+
+            <div class="table-scroll">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>模板名称</th>
+                            <th>更新时间</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in dataModel.paramTemplateList">
+                            <td ng-bind="item.index"></td>
+                            <td ng-bind="item.name"></td>
+                            <td ng-bind="item.createTime"></td>
+                            <td>
+                                <a class="btn btn-default ripple" ng-click="onClickGoTemplateDetail(item.id)">修改</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table-empty isempty="isEmpty"></table-empty>
+        </div>
+
+        <my-pagination page-option="option"></my-pagination>
+
+    </div>
+
+</div>

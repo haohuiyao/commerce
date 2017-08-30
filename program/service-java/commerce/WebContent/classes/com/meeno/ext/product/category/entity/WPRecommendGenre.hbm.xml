@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.ext.product.category.entity">
+	<class name="WPRecommendGenre" table="mn_recommend_genre">
+		<id name="id" type="java.lang.Long" column="ID">
+			<generator class="native">
+	        </generator>
+		</id>
+		
+		<property name="position" type="java.lang.Long" column="POSITION" length="11" />
+		<property name="imgUrl" type="java.lang.String" column="IMGURL" length="255" />
+		<property name="type" type="java.lang.Long" column="TYPE" length="6" />
+		<property name="createTime" type="java.sql.Timestamp" column="CREATETIME"/>
+		<property name="sign" type="java.lang.String" column="SIGN" length="5" />
+		<many-to-one name="category" class="com.meeno.ext.product.category.entity.MNCategory" >
+			<column name="CATEGORY_ID" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

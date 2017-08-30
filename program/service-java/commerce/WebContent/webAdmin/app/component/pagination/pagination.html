@@ -1,0 +1,5 @@
+<ul class="pagination">
+	<li><a ng-click="pageFirst()">首页</a></li>
+	<li ng-click="pageClick(p.keys)" ng-repeat="p in page" class="{{option.curr == p.value ?'active':''}}"><a href="javascript:;">{{p.value}}</a></li>
+	<li><a ng-click="pageLast()">尾页</a></li>
+</ul>

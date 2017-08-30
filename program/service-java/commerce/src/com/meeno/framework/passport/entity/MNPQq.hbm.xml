@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.framework.passport.entity">
+	<class name="MNPQq" table="MNP_ACC_QQ">
+		<id name="id" type="java.lang.Long" column="QQ_PP_ID">
+			<generator class="native">
+	        </generator>
+		</id>
+	
+		<property name="openId" type="java.lang.String" column="OPEN_ID" length="60" />
+		<many-to-one name="account" column="ACCT_UUID" class="com.meeno.framework.passport.entity.MNAccount">
+		</many-to-one>
+	</class>
+</hibernate-mapping>

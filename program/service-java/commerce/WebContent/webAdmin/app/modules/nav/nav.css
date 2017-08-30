@@ -1,0 +1,108 @@
+/*@nav@*/
+
+.nav{
+    position: fixed;
+    left: 0;
+    top: 69px;
+    width: 205px;
+    background: #313541;
+    height: 100%;
+    z-index: 111;
+    overflow: auto;
+    padding-bottom: 30px;
+}
+
+.nav-con{
+    overflow: hidden;
+}
+
+.nav-con.mg{
+    margin-top: 30px;
+}
+
+.nav-con.pd{
+    padding-bottom: 80px;
+}
+
+.nav-li{
+    order: 0;
+    font-weight: normal;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-li-a{
+    color: #707783;
+    display: block;
+    padding: 14px 20px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    font-size: 15px;
+}
+
+.nav-li-a:hover{
+    color: #f6f5fa;
+    background: #272a34;
+}
+
+.nav-li-a.active{
+    background: #272a34;
+    color: #fff;
+}
+
+.nav-li-a.active i{
+    color: #00B38B;
+}
+
+.nav-li-a i{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 17px;
+    margin-left: 3px;
+    margin-right: 15px;
+    text-align: center;
+    vertical-align: middle;
+    width: 20px;
+    top: 1px;
+}
+
+.nav-li-a b{
+    vertical-align: middle;
+}
+
+.nav-li-a.navBlock + .nav-sec{
+    display: block;
+}
+
+.nav-sec{
+    display: none;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+}
+
+.nav-sec li{
+    position: relative;
+}
+
+.nav-sec li a{
+    -webkit-user-select:none;
+    padding-left: 80px;
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    color: #999;
+}
+
+.nav-sec li a.active{
+    color: #00B38B;
+}

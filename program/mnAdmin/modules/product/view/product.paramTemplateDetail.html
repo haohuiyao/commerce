@@ -1,0 +1,64 @@
+<!--参数模板详情-->
+
+<div class="container">
+
+    <!--title-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>参数模板详情</b>
+        <div class="title-btn">
+            <a class="btn btn-default ripple" ng-click="saveTemplate()"><i class="ti-plus"></i><span>保存</span></a>
+        </div>
+    </div>
+
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.templateName" form-model="dataModel.templateName"></form-input>
+            </div>
+        </div>
+        <div class="btn btn-default mgl-3" ng-click="addParamItem()">添加参数</div>
+    </div>
+
+    <!--参数列表-->
+    <div class="list-content">
+
+        <div class="table-box">
+
+            <div class="table-scroll">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>参数类型</th>
+                        <th>是否必填</th>
+                        <th>参数名称</th>
+                        <th>参数提示</th>
+                        <th>默认显示</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in dataModel.templateContent">
+                        <td ng-bind="$index+1"></td>
+                        <td ng-bind="item.type"></td>
+                        <td ng-bind="item.optional"></td>
+                        <td ng-bind="item.name"></td>
+                        <td ng-bind="item.hint"></td>
+                        <td ng-bind="item.isShow"></td>
+                        <td>
+                            <a class="btn btn-default ripple" ng-show="item.revisable" ng-click="onClickMod(item)">修改</a>
+                            <a class="btn btn-danger ripple" ng-show="item.revisable" ng-click="onClickDel($index)">删除</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table-empty isempty="isEmpty"></table-empty>
+        </div>
+
+    </div>
+
+    <div ng-include="'modules/product/modal/modal.editProductParamItem.html'"></div>
+
+</div>

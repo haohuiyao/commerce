@@ -1,0 +1,153 @@
+<!--
+    机型组添加
+-->
+<link rel="stylesheet" href="modules/excavator/assets/css/excavator.css">
+
+<div class="container">
+
+    <!--title-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>添加挖机</b>
+        <div class="title-btn">
+            <a class="btn btn-default ripple" ng-click="onClickSave()"><i class="ti-plus"></i><span>保存</span></a>
+        </div>
+    </div>
+
+    <h2 class="product-h2">基本信息</h2>
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productName" form-model="dataModel.productName"></form-input>
+            </div>
+            <div class="form-item-container form-item-half hide">
+                <form-input form-obj="formObj.productPlace" form-model="dataModel.productPlace"></form-input>
+            </div>
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-full hide">
+                <form-input form-obj="formObj.productSummary" form-model="dataModel.productSummary"></form-input>
+            </div>
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-select form-obj="formObj.productBrand" form-model="dataModel.productBrand" reset="formObj.reset"></form-select>
+            </div>
+            <div class="form-item-container form-item-half hide">
+                <form-api-select form-obj="formObj.productSource" form-model="dataModel.productSource"></form-api-select>
+            </div>
+        </div>
+
+        <div class="form-li hide">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productCost" form-model="dataModel.productCost"></form-input>
+            </div>
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productCommonName" form-model="dataModel.productCommonName"></form-input>
+            </div>
+        </div>
+
+        <div class="form-li hide">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productNumber" form-model="dataModel.productNumber"></form-input>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--具体机型-->
+    <h2 class="product-h2">具体机型</h2>
+    <div class="bg-color-fff">
+        <div>
+            <a class="btn btn-default ripple mgt-1 mgl-2" ng-click="addExcavatorModel()"><i class="ti-plus"></i><span>添加机型</span></a>
+        </div>
+        <div class="list-content">
+
+            <div class="table-box">
+
+                <div class="table-scroll">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>名称</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in dataModel.excavatorModelArr">
+                            <td ng-bind="$index + 1"></td>
+                            <td ng-bind="item.name"></td>
+                            <td>
+                                <a class="btn btn-warning ripple" ng-click="delExcavatorModel($index)">删除</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table-empty isempty="dataModel.excavatorModelArr.length == 0"></table-empty>
+            </div>
+        </div>
+    </div>
+
+    <!--产品参数-->
+    <h2 class="product-h2 hide">产品参数</h2>
+    <div class="bg-color-fff hide">
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-api-select form-obj="formObj.paramTemplate" form-model="dataModel.paramTemplateId"></form-api-select>
+            </div>
+        </div>
+        <div>
+            <param-template template-id="dataModel.paramTemplateId" param-value="dataModel.paramValue" template-detail="dataModel.templateDetail"></param-template>
+        </div>
+    </div>
+
+
+    <!--产品图片-->
+    <h2 class="product-h2 hide">产品图片</h2>
+    <div class="bg-color-fff hide">
+        <div class="form-li">
+            <div class="form-item-container form-item-full">
+                <div class="form-item">
+                    <div class="form-title f">产品首图：</div>
+                    <div class="form-item-content">
+                        <upload-single url="dataModel.displayImage"></upload-single>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-color-fff hide">
+        <div class="form-li">
+            <div class="form-item-container w-880">
+                <div class="form-item">
+                    <div class="form-title f">产品轮播图：</div>
+                    <div class="form-item-content">
+                        <upload-multiple url="dataModel.imgUrl" maxnum="9"></upload-multiple>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-color-fff hide">
+        <div class="form-li">
+            <div class="form-item-container w-880">
+                <div class="form-item">
+                    <div class="form-title f">产品详情：</div>
+                    <div class="form-item-content">
+                        <ui-kindeditor ng-model="dataModel.detail"></ui-kindeditor>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-include="'modules/excavator/modal/modal.editExcavatorModel.html'"></div>
+
+</div>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.ext.product.template.entity">
+	<class name="MNParamTemplate" table="mn_param_template">
+		<id name="id" type="java.lang.Long" column="TEMPLATE_ID">
+			<generator class="native">
+	        </generator>
+		</id>
+	
+		<property name="content" type="java.lang.String" column="CONTENT"/>
+		
+		<property name="name" type="java.lang.String" column="NAME"/>
+		
+		<property name="createTime" type="java.sql.Timestamp" column="CREATE_TIME" />
+		
+		<property name="status" type="java.lang.String" column="STATUS"
+			not-null="true" length="6" />
+	</class>
+</hibernate-mapping>

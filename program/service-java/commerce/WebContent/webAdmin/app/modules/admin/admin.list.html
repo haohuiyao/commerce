@@ -1,0 +1,58 @@
+<!--
+列表页面
+create by daipengpeng
+-->
+
+<div class="container">
+
+    <!--标题-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>管理员列表</b>
+        <div class="title-btn">
+            <a class="btn btn-default ripple" ng-click="onClickAdd()"><i class="ti-plus"></i><span>添加</span></a>
+        </div>
+    </div>
+
+    <!--table-->
+    <div class="list-content">
+
+        <div class="table-box">
+
+            <div class="table-scroll">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in dataModel.adminList">
+                            <td ng-bind="item.index">1</td>
+                            <td ng-bind="item.name">用户名</td>
+                            <td>
+                                <a class="btn btn-xs btn-warning-border" ng-click="onClickItemMod(item)">修改</a>
+                                <a class="btn btn-xs btn-danger-border" ng-click="onClickItemDel(item.id)">删除</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!--空页面-->
+            <div class="table-empty" ng-show="dataModel.adminList.length == 0">
+                <img src="build/images/public/empty.png" />
+                <p>暂无数据</p>
+            </div>
+
+        </div>
+
+        <my-pagination page-option="option"></my-pagination>
+
+    </div>
+
+    <!--include 管理员详情-->
+    <div ng-include="'app/modules/admin/modal.admin.detail.html'"></div>
+</div>

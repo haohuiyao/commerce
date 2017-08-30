@@ -1,0 +1,10 @@
+<div>
+    <div class="form-li">
+        <div class="form-item-container form-item-half" ng-repeat="item in templateDetail" ng-if="item.type == 1">
+            <form-input form-obj="item.formObj" form-model="item.formModel"></form-input>
+        </div>
+            <div class="form-item-container form-item-half" ng-repeat="item in templateDetail" ng-if="item.type == 2">
+                <form-select form-obj="item.formObj" form-model="item.formModel" reset="true"></form-select>
+            </div>
+    </div>
+</div>

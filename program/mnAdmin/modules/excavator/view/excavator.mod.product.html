@@ -1,0 +1,85 @@
+<!--
+    机型组添加
+-->
+<link rel="stylesheet" href="modules/excavator/assets/css/excavator.css">
+
+<div class="container">
+
+    <!--title-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>修改挖机</b>
+        <!--<div class="title-btn"></div>-->
+    </div>
+
+    <h2 class="product-h2">基本信息</h2>
+    <div class="bg-color-fff">
+        <div class="clear">
+            <a class="btn btn-default ripple r mgt-2 mgr-2" ng-click="onClickSave()"><i class="ti-plus"></i><span>保存</span></a>
+        </div>
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productName" form-model="dataModel.productName"></form-input>
+            </div>
+
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-select form-obj="formObj.productBrand" form-model="dataModel.productBrand" reset="dataModel.resetBrandSel"></form-select>
+            </div>
+        </div>
+
+    </div>
+
+    <!--具体机型-->
+    <h2 class="product-h2">具体机型</h2>
+    <div class="bg-color-fff">
+        <div>
+            <a class="btn btn-default ripple mgt-1 mgl-2" ng-click="addExcavatorModel()"><i class="ti-plus"></i><span>添加机型</span></a>
+        </div>
+
+        <div class="list-content">
+
+            <div class="table-box">
+
+                <div class="table-scroll">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>名称</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in dataModel.excavatorModelArr">
+                            <td ng-bind="$index + 1"></td>
+                            <td ng-bind="item.name"></td>
+                            <td>
+                                <span class="btn btn-xs" ng-class="{true:'btn-success', false:'btn-white'}[item.status]" ng-bind="item.statusValue"></span>
+                            </td>
+                            <td>
+                                <a class="btn btn-warning ripple" ng-click="upOrOutProduct(item.status,item.id)" ng-bind="item.statusBtnVal">下架</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table-empty isempty="excavatorModelArr.length == 0"></table-empty>
+            </div>
+        </div>
+    </div>
+        <!--<div class="excavator-model">-->
+            <!--<div class="excavator-model-item" ng-repeat="item in dataModel.excavatorModelArr">-->
+                <!--<i class="back-cover" ng-click="delExcavatorModel($index)"></i>-->
+                <!--<div ng-bind="item.name">320-A</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+
+
+    <div ng-include="'modules/excavator/modal/modal.editExcavatorModel.html'"></div>
+
+</div>

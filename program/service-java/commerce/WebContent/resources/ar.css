@@ -1,0 +1,21 @@
+.title
+{
+	height: 2em;
+	line-height: 2em;
+	text-align: center;
+	font-size: 4em;
+	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+}
+
+.content
+{
+	width: 100%;
+}
+
+.rotate{
+	width: 100%;
+    -ms-transform:rotate(90deg); /* IE 9 */
+    -moz-transform:rotate(90deg); /* Firefox */
+    -webkit-transform:rotate(90deg); /* Safari and Chrome */
+    -o-transform:rotate(90deg); /* Opera */
+}　　

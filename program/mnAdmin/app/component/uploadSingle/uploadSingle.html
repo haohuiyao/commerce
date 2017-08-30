@@ -1,0 +1,9 @@
+<form method="post" enctype="multipart/form-data" action="">
+	<div class="add-up-load-img">
+		<i class="cover" style="background-image: url({{upLoadCover}});"></i>
+	</div>
+	<div class="add-up-load-btn">
+		<img src="build/images/public/plus.png" />
+		<input type="file" name="file" onchange="angular.element(this).scope().imgUpload(this.files)"/>
+	</div>	
+</form>

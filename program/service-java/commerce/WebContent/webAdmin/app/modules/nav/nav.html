@@ -1,0 +1,43 @@
+<div class="nav" ng-controller="NavController">
+
+	<div class="nav-item">
+		<ul class="nav-con mg">
+
+			<!--<li class="nav-li">-->
+				<!--<a class="nav-li-a" ui-sref="content" ng-click="tabAction('首页','content')">-->
+					<!--<i class="ti-home"></i>-->
+					<!--<b>首页</b>-->
+				<!--</a>-->
+				<!--<ul class="nav-sec"></ul>-->
+			<!--</li>-->
+
+			<li class="nav-li" ng-repeat="item in lfNavArr" ng-init="outerIndex = $index">
+				<a class="nav-li-a" ui-sref="{{item.state}}">
+					<i ng-class="item.icon"></i>
+					<b ng-bind="item.title">管理员管理</b>
+				</a>
+				<ul class="nav-sec">
+					<li ng-repeat="item2 in item.childs">
+						<a ui-sref="{{item2.state}}" data-sref = "{{item2.state}}" ui-sref-active="active" ng-bind="item2.title"  on-finish-render-filters="{{outerIndex}}">管理员管理</a>
+					</li>
+				</ul>
+			</li>
+
+
+		</ul>
+	</div>
+
+</div>
+
+<script>
+	$(".nav-li-a").on("click",function(){
+		$(".nav-li-a").removeClass("active");
+		$(this).addClass("active");
+	})
+
+	$(".nav-sec a").on("click",function(){
+		$(".nav-sec a").removeClass("active");
+		$(this).addClass("active");
+	})
+</script>
+

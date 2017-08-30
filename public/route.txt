@@ -1,0 +1,352 @@
+{
+    "code": 0,
+    "data": {
+        "list": [
+            {
+                "childs": [
+                    {
+                        "params": {},
+                        "isNav": 1,
+                        "state": "content",
+                        "icon": "",
+                        "id": 8,
+                        "parentId": 2,
+                        "status": "",
+                        "title": "首页",
+                        "url": "/content",
+                        "templateUrl": "app/modules/content/content.html",
+                        "controller": "ContentCtrl",
+                        "controllerUrl": [
+                            "app/modules/content/Content.Controller.js"
+                        ]
+                    }
+                ],
+                "state": "content",
+                "icon": "ti-home",
+                "id": 2,
+                "title": "首页"
+            },
+            {
+                "childs": [
+                    {
+                        "params": {},
+                        "isNav": 1,
+                        "state": "adminList",
+                        "icon": "",
+                        "id": 8,
+                        "parentId": 2,
+                        "status": "",
+                        "title": "管理员列表",
+                        "url": "/adminList",
+                        "templateUrl": "app/modules/admin/admin.list.html",
+                        "controller": "AdminListCtrl",
+                        "controllerUrl": [
+                            "app/modules/admin/Admin.List.Controller.js"
+                        ]
+                    }
+                ],
+                "state": "adminList",
+                "icon": "ti-user",
+                "id": 2,
+                "title": "管理员管理"
+            },
+            {
+                "childs": [
+                    {
+                        "params": {},
+                        "isNav": 1,
+                        "state": "productList",
+                        "icon": "",
+                        "id": 15,
+                        "parentId": 3,
+                        "status": "",
+                        "title": "产品列表",
+                        "url": "/productList",
+                        "templateUrl": "modules/product/view/product.list.html",
+                        "controller": "ProductListCtrl",
+                        "controllerUrl": [
+                            "modules/product/productConfig.js",
+                            "modules/product/view/Product.List.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {
+                            "id": null
+                        },
+                        "isNav": 0,
+                        "state": "productDetail",
+                        "icon": "",
+                        "id": 15,
+                        "parentId": 3,
+                        "status": "",
+                        "title": "产品详情",
+                        "url": "/productDetail",
+                        "templateUrl": "modules/product/view/product.detail.html",
+                        "controller": "ProductDetailCtrl",
+                        "controllerUrl": [
+                            "modules/product/productConfig.js",
+                            "modules/product/view/Product.Detail.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {},
+                        "isNav": 1,
+                        "state": "productBrand",
+                        "icon": "",
+                        "id": 15,
+                        "parentId": 3,
+                        "status": "",
+                        "title": "产品品牌",
+                        "url": "/productBrand",
+                        "templateUrl": "modules/product/view/product.brand.html",
+                        "controller": "ProductBrandCtrl",
+                        "controllerUrl": [
+                            "modules/product/productConfig.js",
+                            "modules/product/view/Product.Brand.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {},
+                        "isNav": 1,
+                        "state": "productClassify",
+                        "icon": "",
+                        "id": 15,
+                        "parentId": 3,
+                        "status": "",
+                        "title": "产品分类",
+                        "url": "/productClassify",
+                        "templateUrl": "modules/product/view/product.classify.html",
+                        "controller": "ProductClassifyCtrl",
+                        "controllerUrl": [
+                            "modules/product/productConfig.js",
+                            "modules/product/view/Product.Classify.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {},
+                        "isNav": 1,
+                        "state": "productParamTemplate",
+                        "icon": "",
+                        "id": 15,
+                        "parentId": 3,
+                        "status": "",
+                        "title": "产品参数模板",
+                        "url": "/productParamTemplate",
+                        "templateUrl": "modules/product/view/product.paramTemplate.html",
+                        "controller": "ProductParamTemplateCtrl",
+                        "controllerUrl": [
+                            "modules/product/productConfig.js",
+                            "modules/product/view/Product.ParamTemplate.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {
+                            "id": null
+                        },
+                        "isNav": 0,
+                        "state": "productParamTemplateDetail",
+                        "icon": "",
+                        "id": 15,
+                        "parentId": 3,
+                        "status": "",
+                        "title": "参数模板详情",
+                        "url": "/productParamTemplateDetail",
+                        "templateUrl": "modules/product/view/product.paramTemplateDetail.html",
+                        "controller": "ProductParamTemplateDetailCtrl",
+                        "controllerUrl": [
+                            "modules/product/productConfig.js",
+                            "modules/product/view/Product.ParamTemplateDetail.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {
+                            "id": null
+                        },
+                        "isNav": 0,
+                        "state": "productSecondClassify",
+                        "icon": "",
+                        "id": 15,
+                        "parentId": 3,
+                        "status": "",
+                        "title": "二级分类",
+                        "url": "/productSecondClassify",
+                        "templateUrl": "modules/product/view/product.secondClassify.html",
+                        "controller": "ProductSecondClassifyCtrl",
+                        "controllerUrl": [
+                            "modules/product/productConfig.js",
+                            "modules/product/view/Product.SecondClassify.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {
+                            "id": null
+                        },
+                        "isNav": 1,
+                        "state": "productSource",
+                        "icon": "",
+                        "id": 15,
+                        "parentId": 3,
+                        "status": "",
+                        "title": "产品货源",
+                        "url": "/productSource",
+                        "templateUrl": "modules/product/view/product.source.html",
+                        "controller": "ProductSourceCtrl",
+                        "controllerUrl": [
+                            "modules/product/productConfig.js",
+                            "modules/product/view/Product.Source.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {
+                            "id": null
+                        },
+                        "isNav": 1,
+                        "state": "productFreightTemplate",
+                        "icon": "",
+                        "id": 15,
+                        "parentId": 3,
+                        "status": "",
+                        "title": "产品运费模板",
+                        "url": "/productFreightTemplate",
+                        "templateUrl": "modules/product/view/product.freightTemplate.html",
+                        "controller": "freightTemplateCtrl",
+                        "controllerUrl": [
+                            "modules/product/productConfig.js",
+                            "modules/product/view/Product.FreightTemplate.Controller.js"
+                        ]
+                    }
+                ],
+                "state": "",
+                "icon": "ti-package",
+                "id": 3,
+                "title": "商品管理"
+            },
+            {
+                "childs": [
+                    {
+                        "params": {},
+                        "isNav": 1,
+                        "state": "excavatorProductList",
+                        "icon": "",
+                        "id": 8,
+                        "parentId": 2,
+                        "status": "",
+                        "title": "机型组管理",
+                        "url": "/excavatorProductList",
+                        "templateUrl": "modules/excavator/view/excavator.product.list.html",
+                        "controller": "ExcavatorProductListCtrl",
+                        "controllerUrl": [
+                            "modules/excavator/excavatorConfig.js",
+                            "modules/product/productConfig.js",
+                            "modules/excavator/view/excavator.product.list.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {},
+                        "isNav": 0,
+                        "state": "excavatorAddProduct",
+                        "icon": "",
+                        "id": 8,
+                        "parentId": 2,
+                        "status": "",
+                        "title": "机型组添加",
+                        "url": "/excavatorAddProduct",
+                        "templateUrl": "modules/excavator/view/excavator.add.product.html",
+                        "controller": "ExcavatorAddProductCtrl",
+                        "controllerUrl": [
+                            "modules/excavator/excavatorConfig.js",
+                            "modules/product/productConfig.js",
+                            "modules/excavator/view/excavator.add.product.Controller.js"
+                        ]
+                    },
+{
+    "params": {"id": null},
+    "isNav": 0,
+    "state": "excavatorProductDetail",
+    "icon": "",
+    "id": 8,
+    "parentId": 2,
+    "status": "",
+    "title": "机型组详情",
+    "url": "/excavatorProductDetail",
+    "templateUrl": "modules/excavator/view/excavator.product.detail.html",
+    "controller": "ExcavatorProductDetailCtrl",
+    "controllerUrl": [
+        "modules/excavator/excavatorConfig.js",
+        "modules/product/productConfig.js",
+        "modules/excavator/view/excavator.product.detail.Controller.js"
+    ]
+},
+{
+    "params": {"id": null},
+    "isNav": 0,
+    "state": "excavatorModProduct",
+    "icon": "",
+    "id": 8,
+    "parentId": 2,
+    "status": "",
+    "title": "机型组修改",
+    "url": "/excavatorModProduct",
+    "templateUrl": "modules/excavator/view/excavator.mod.product.html",
+    "controller": "ExcavatorModProductCtrl",
+    "controllerUrl": [
+        "modules/excavator/excavatorConfig.js",
+        "modules/product/productConfig.js",
+        "modules/excavator/view/excavator.mod.product.Controller.js"
+    ]
+}
+                    
+                ],
+                "state": "excavatorProductList",
+                "icon": "ti-user",
+                "id": 2,
+                "title": "挖掘机管理"
+            },
+            {
+                "childs": [
+                    {
+                        "params": {},
+                        "isNav": 1,
+                        "state": "partsProductList",
+                        "icon": "",
+                        "id": 8,
+                        "parentId": 2,
+                        "status": "",
+                        "title": "产品组管理",
+                        "url": "/partsProductList",
+                        "templateUrl": "modules/parts/view/parts.product.list.html",
+                        "controller": "PartsProductListCtrl",
+                        "controllerUrl": [
+                            "modules/parts/partsConfig.js",
+                            "modules/product/productConfig.js",
+                            "modules/parts/view/parts.product.list.Controller.js"
+                        ]
+                    },
+                    {
+                        "params": {},
+                        "isNav": 1,
+                        "state": "partsSkuList",
+                        "icon": "",
+                        "id": 8,
+                        "parentId": 2,
+                        "status": "",
+                        "title": "产品管理",
+                        "url": "/partsSkuList",
+                        "templateUrl": "modules/parts/view/parts.sku.list.html",
+                        "controller": "PartsSkuListCtrl",
+                        "controllerUrl": [
+                            "modules/parts/partsConfig.js",
+                            "modules/product/productConfig.js",
+                            "modules/parts/view/parts.sku.list.Controller.js"
+                        ]
+                    }
+                ],
+                "state": "partsProductList",
+                "icon": "ti-user",
+                "id": 2,
+                "title": "配件管理"
+            }
+        ]
+    },
+    "message": "ok"
+}

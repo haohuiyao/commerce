@@ -1,0 +1,68 @@
+
+<!--
+    @产品运费模板
+    @create by daipengpeng
+    @time 2017/07/724
+-->
+<div class="modal" id="editProductFreightTemplate">
+    <!--主体-->
+    <div class="modal-main">
+        <!--模态框头部-->
+        <div class="modal-header">
+            <h2 ng-bind="dataModel.modalTitle">添加产品品牌</h2>
+            <span></span>
+        </div>
+        <!--模态框内容-->
+        <div class="modal-body">
+
+            <div class="form-li">
+                <div class="form-item-container form-item-full">
+                    <form-input form-obj="formObj.name" form-model="dataModel.name"></form-input>
+                </div>
+            </div>
+
+            <div class="form-li">
+                <div class="form-item-container form-item-half">
+                    <form-select form-obj="formObj.postage" form-model="dataModel.postage" reset="'true'"></form-select>
+                </div>
+                <div class="form-item-container form-item-half">
+                    <form-select form-obj="formObj.pattern" form-model="dataModel.pattern" reset="'true'"></form-select>
+                </div>
+            </div>
+
+            <div class="form-li">
+                <div class="form-item-container form-item-half">
+                    <form-input form-obj="formObj.dispatching" form-model="dataModel.dispatching"></form-input>
+                </div>
+                <div class="form-item-container form-item-half">
+                    <form-input form-obj="formObj.scope" form-model="dataModel.scope"></form-input>
+                </div>
+            </div>
+
+            <div class="form-li">
+                <div class="form-item-container form-item-half">
+                    <form-input form-obj="formObj.baseWeight" form-model="dataModel.baseWeight"></form-input>
+                </div>
+                <div class="form-item-container form-item-half">
+                    <form-input form-obj="formObj.basePrice" form-model="dataModel.basePrice"></form-input>
+                </div>
+            </div>
+
+            <div class="form-li">
+                <div class="form-item-container form-item-half">
+                    <form-input form-obj="formObj.addWeight" form-model="dataModel.addWeight"></form-input>
+                </div>
+                <div class="form-item-container form-item-half">
+                    <form-input form-obj="formObj.addPrice" form-model="dataModel.addPrice"></form-input>
+                </div>
+            </div>
+
+
+        </div>
+        <!--模态框底部-->
+        <div class="modal-bottom">
+            <a class="ripple" ng-click="submitEdit()">保存</a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,133 @@
+<!--
+    添加产品组
+-->
+<link rel="stylesheet" href="modules/parts/assets/css/parts.css">
+
+<div class="container">
+
+    <!--title-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>产品组详情</b>
+        <div class="title-btn">
+            <!--<a class="btn btn-default ripple" ng-click="onClickAdd()"><i class="ti-plus"></i><span>保存</span></a>-->
+        </div>
+    </div>
+
+    <h2 class="product-h2">基本信息</h2>
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productName" form-model="dataModel.productName"></form-input>
+            </div>
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productPlace" form-model="dataModel.productPlace"></form-input>
+            </div>
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-full">
+                <form-input form-obj="formObj.productSummary" form-model="dataModel.productSummary"></form-input>
+            </div>
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-full">
+                <form-input form-obj="formObj.productClassifyName" form-model="dataModel.productClassifyName"></form-input>
+            </div>
+            <div class="form-item-container form-item-full">
+                <form-input form-obj="formObj.productBrandName" form-model="dataModel.productBrandName"></form-input>
+            </div>
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productNumber" form-model="dataModel.productNumber"></form-input>
+            </div>
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productCommonName" form-model="dataModel.productCommonName"></form-input>
+            </div>
+        </div>
+
+    </div>
+
+    <!--s适用机型-->
+    <h2 class="product-h2">适用机型</h2>
+    <div class="bg-color-fff mgt-3">
+
+        <div class="clear">
+            <span class="btnSel-item f mgt-1 mgl-1 mgr-1">通用</span>
+            <span class="btnSel-act f mgt-1 mgl-1 mgr-1">非通用</span>
+        </div>
+
+
+        <div ng-repeat="item in dataModel.productModelArr" class="clear">
+           <div class="f machine-brand" ng-bind="item.brandName"></div>
+           <div class="machine-list clear ">
+               <span class=" f mgl-1 mgt-1 btnSel-act" ng-bind="item2" ng-repeat="item2 in item.modelList"></span>
+           </div>
+        </div>
+
+
+    <!--产品参数-->
+    <h2 class="product-h2">产品参数</h2>
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.paramTemplateName" form-model="dataModel.paramTemplateName"></form-input>
+            </div>
+        </div>
+        <div class="form-li">
+            <div class="form-item-container form-item-half" ng-repeat="item in dataModel.paramTemplateValueFormArr">
+                <form-input form-obj="item.formObj" form-model="item.formModel"></form-input>
+            </div>
+        </div>
+
+    </div>
+
+    <!--产品图片-->
+    <h2 class="product-h2">产品图片</h2>
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container form-item-full">
+                <div class="form-item">
+                    <div class="form-title f">产品首图：</div>
+                    <div class="form-item-content">
+                        <div class="add-up-load-img">
+                            <i class="cover" style="background-image: url({{dataModel.displayImage}});"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container w-880">
+                <div class="form-item">
+                    <div class="form-title f">产品轮播图：</div>
+                    <div class="form-item-content">
+                        <div class="clear">
+                            <li style="background-image: url({{item}})" class="back-cover product-image f mgl-1 mgt-1" ng-repeat="item in dataModel.imgUrl"></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container w-880">
+                <div class="form-item">
+                    <div class="form-title f">产品详情：</div>
+                    <div class="form-item-content">
+                        <div dynamic="dataModel.detail" style="height: 600px;overflow: auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

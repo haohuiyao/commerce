@@ -1,0 +1,79 @@
+<!--
+    产品品牌
+    create by daipengpeng
+    2017/07/24
+-->
+
+<div class="container">
+
+    <!--列表页面-->
+    <div>
+        <!--titles-->
+        <div class="title">
+            <i class="title-icon ion-grid"></i>
+            <b>产品品牌</b>
+            <div class="title-btn">
+                <a class="btn btn-default ripple" ng-click="onClickAddBrand()"><i class="ti-plus"></i><span>添加</span></a>
+            </div>
+        </div>
+
+        <div class="list-content">
+
+            <div class="table-box">
+
+                <div class="table-scroll">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>品牌名称</th>
+                            <th>产品图片</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in dataModel.brandList">
+                            <td ng-bind="item.index"></td>
+                            <td ng-bind="item.name"></td>
+                            <td>
+                                <i class="table-img" style="background-image: url({{item.imgUrl}});"></i>
+                            </td>
+                            <td>
+                                <a class="btn btn-default ripple" ng-click="onClickModBrand(item)">修改</a>
+                                <a class="btn btn-danger ripple" ng-click="onClickDelBrand(item.id)">删除</a>
+                                <a class="btn btn-danger ripple" ng-click="onClickModClassify(item.id)">编辑分类</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table-empty isempty="isEmpty"></table-empty>
+            </div>
+
+            <my-pagination page-option="option"></my-pagination>
+
+        </div>
+
+        <div ng-include="'modules/product/modal/modal.editProductBrand.html'"></div>
+        <div ng-include="'modules/product/modal/modal.editProductBrandClassify.html'"></div>
+    </div>
+
+    <!--&lt;!&ndash;详情页面&ndash;&gt;-->
+    <!--<div class="hide">-->
+
+        <!--<div class="mgt-2 bg-color-fff">-->
+
+            <!--<div class="form-li">-->
+                <!--<div class="form-item-container form-item-full">-->
+                    <!--<div class="form-title f">品牌分类：</div>-->
+                    <!--<div class="form-item-content">-->
+                        <!--<multistage-select sel-id="dataModel.classifyArr"></multistage-select>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+
+    <!--</div>-->
+
+</div>

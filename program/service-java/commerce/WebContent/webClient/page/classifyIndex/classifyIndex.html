@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/css/ui.base.css" />
+    <link rel="stylesheet" href="../../angular/directive/searchItem/searchItem.css" />
+    <link rel="stylesheet" href="../../angular/directive/letterSort/letterSort.css" />
+    <link rel="stylesheet" href="../../angular/directive/backImg/backImg.css" />
+    <link rel="stylesheet" href="classifyIndex.css" />
+    <title>分类</title>
+</head>
+<body ng-controller="ctrl" id="body">
+    
+    <div class="container">
+	    <div>
+	        <!--<div class="history hidden">
+	        	<div>历史访问机型</div>
+	        </div>
+	        
+	        <div class="hot-brand">
+	        	<div class="hot-brand-head">热门品牌</div>
+	        	<div class="hot-brand-list">
+	        		<ul class="">
+	        			<li ng-repeat="item in dataModel.hotMachineBrandList" ng-click="onClickGetMachineDetail(item.id)">
+	        				<div class="hot-brand-icon">
+	        					<back-img imageurl="item.imgUrl" defaulturl="{{defaultObj.de_classify_icon}}"></back-img>
+	        				</div>
+	        				<div class="hot-brand-name" ng-bind="item.name">卡特</div>
+	        			</li>
+	        		</ul>
+	        	</div>
+	        </div>-->
+	        <div class="classify-header">
+	        	<a ng-click="goBack()">&Chi;</a><span>选择机型</span>
+	        </div>
+	        <div class="cd-container">
+	        	<div class="sort_box">
+	        		<div>
+	        			<div class="sort_letter" id="#">*</div>
+		                <div class="sort_list" ng-click="onClickSelAll()">
+	                    	<span class="num_name">不限品牌</span>
+		                </div>
+	        		</div>
+	        		<div ng-repeat="item in dataModel.machineBrandList track by $index">
+	        			<div class="sort_letter" id="{{item.abbreviation}}" ng-bind="item.abbreviation">A</div>
+		                <div class="sort_list" ng-repeat="item2 in item.listArr" ng-click="onClickGetMachineDetail(item2.id)">
+	                    	<span class="sort_list-icon">
+	                    		<back-img imageurl="item2.imgUrl" defaulturl="{{defaultObj.de_classify_icon}}"></back-img>
+	                    	</span>
+	                    	<span class="num_name" ng-bind="item2.name">万达集团</span>
+		                </div>
+	        		</div>
+	            </div>
+	            
+	            <letter-sort scroll-id="body" letter-arr="dataModel.letterArr"></letter-sort>
+	        </div>
+	    </div>
+	    
+	    <!--侧边-->
+	    <div class="machine-detail">
+	    	<div class="machine-detail-bg" ng-click="onClickHideNav()"></div>
+	    	<div class="detail-content">
+	    		<div class="sort_list">
+	            	<span class="sort_list-icon">
+	            		<back-img imageurl="dataModel.machineBrandDetail.imgUrl" defaulturl="{{defaultObj.de_classify_icon}}"></back-img>
+	            	</span>
+	            	<span class="num_name" ng-bind="dataModel.machineBrandDetail.name">万达集团</span>
+	            </div>
+	            
+	            <div class="machine-detail-limit" ng-click="onClickSelMachineBrand(dataModel.machineBrandDetail.id,dataModel.machineBrandDetail.name,'',dataModel.machineBrandDetail.type)">
+	            	<div class="limit-top">*</div>
+	            	<div class="limit-bo">不限机型</div>
+	            </div>
+	            
+	            <div class="machine-detail-list">
+	            	<div ng-repeat="item in dataModel.machineBrandDetail.childItem" ng-bind="item.name" ng-click="onClickSelMachineBrand(item.id,dataModel.machineBrandDetail.name,item.name,item.type)">220</div>
+	            </div>
+	    	</div>
+	    </div>
+    </div>
+    
+</body>
+
+	<!--libs-->
+	<script src="../../libs/zepto.min.js"></script>
+	<script src="../../libs/angular.min.js"></script>
+	<script src="../../libs/fastclick.js"></script>
+	
+	<!--common-->
+	<script src="../../config/mn.config.js"></script>
+	<script src="../../config/mn.config.api.js"></script>
+	<script src="../../config/mn.config.const.js"></script>
+	<script src="../../config/mn.config.text.js"></script>
+	<script src="../../config/mn.config.url.js"></script>
+	<script src="../../config/mn.commonArr.js"></script>
+	<script src="../../common/mn.utility.js"></script>
+	<script src="../../common/mn.loading.js"></script>
+	<script src="../../common/mn.common.js"></script>
+	<script src="../../http/mn.http.js"></script>
+	<script src="../../http/mn.apiAjaxRequest.js"></script>
+	
+	<!--angular-->
+	<script src="../../angular/app.js"></script>
+	<script src="../../angular/directive/backImg/backImg.js"></script>
+	<script src="../../angular/directive/searchItem/searchItem.js"></script>
+	<script src="../../angular/directive/iconItem/iconItem.js"></script>
+	<script src="../../angular/directive/letterSort/zeptoScroll.js"></script>
+	<script src="../../angular/directive/letterSort/letterSort.js"></script>
+	
+	<script src="classifyIndex.controller.js"></script>
+</html>

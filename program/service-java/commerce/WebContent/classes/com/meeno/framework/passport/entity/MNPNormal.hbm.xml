@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.framework.passport.entity">
+	<class name="MNPNormal" table="MNP_ACC_NORMAL">
+		<id name="id" type="java.lang.Long" column="NORMAL_PP_ID">
+			<generator class="native">
+	        </generator>
+		</id>
+	
+		<property name="username" type="java.lang.String" column="USER_NAME" length="120" />
+		<property name="pwd" type="java.lang.String" column="PWD" length="100" />
+		<many-to-one name="account" column="ACCT_UUID" class="com.meeno.framework.passport.entity.MNAccount">
+		</many-to-one>
+	</class>
+</hibernate-mapping>

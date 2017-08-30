@@ -1,0 +1,1 @@
+alter table mnu_base_user modify column `GROUP_ID` int(11) DEFAULT '0' COMMENT '用户分组ID';

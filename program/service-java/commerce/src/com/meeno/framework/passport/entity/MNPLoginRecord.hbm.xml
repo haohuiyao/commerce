@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.framework.passport.entity">
+	<class name="MNPLoginRecord" table="MNP_LOGIN_RECORD">
+		<composite-id>
+           <key-many-to-one name="account" column="UUID" class="com.meeno.framework.passport.entity.MNAccount">
+			</key-many-to-one>
+           <key-property name="entryType" column="ENTRY_TYPE" type="java.lang.String"></key-property>  
+        </composite-id>  
+		<!-- <property name="entryType" type="java.lang.String" column="ENTRY_TYPE" length="8" /> -->
+		<property name="token" type="java.lang.String" column="TOKEN" length="255" />
+		<property name="lastLoginTime" type="java.sql.Timestamp" column="LAST_LOGIN_TIME" />
+		<!-- <many-to-one name="account" column="UUID" class="com.meeno.ebusiness.entity.MNAccount">
+		</many-to-one> -->
+		
+		
+	</class>
+</hibernate-mapping>

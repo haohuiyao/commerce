@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.ext.product.category.entity">
+	<class name="MNCategory" table="mn_category">
+		<id name="id" type="java.lang.Long" column="CATEGORY_ID">
+			<generator class="native">
+			</generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="CATEGORY_NAME"
+			length="50" />
+		<property name="imgUrl" type="java.lang.String" column="IMG_URL" />
+		<property name="status" type="java.lang.String" column="STATUS"
+			not-null="true" length="6" />
+		<property name="level" type="java.lang.Integer" column="LEVEL"
+			length="11" />
+		<property name="style" type="java.lang.String" column="STYLE"
+			length="40" />
+		<property name="abbreviation" type="java.lang.String" column="ABBREVIATION"
+			length="20" />
+		<property name="createTime" type="java.sql.Timestamp" column="CREATE_TIME" />
+		<many-to-one name="parent"
+			class="com.meeno.ext.product.category.entity.MNCategory" not-null="false">
+			<column name="PARENT_ID" />
+		</many-to-one>
+
+		<many-to-one name="paramTemplate" column="TEMPLATE_ID"
+			class="com.meeno.ext.product.template.entity.MNParamTemplate">
+		</many-to-one>
+		<set name="genres" inverse="true">
+			<key>
+				<column name="CATEGORY_ID" not-null="true">
+					<comment>推荐列表</comment>
+				</column>
+			</key>
+			<one-to-many class="com.meeno.ext.product.category.entity.WPRecommendGenre" />
+		</set>
+	</class>
+</hibernate-mapping>

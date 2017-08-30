@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.meeno.ext.product.brand.entity">
+	<class name="MNGSkuKey" table="mng_sku_key">
+		<id name="skuKeyId" type="java.lang.Long" column="SKU_KEY_ID">
+			<generator class="native">
+	        </generator>
+		</id>
+		<property name="keyName" type="java.lang.String" column="KEY_NAME"/>
+		<property name="goodsId" type="java.lang.Long" column="GOODS_ID"/>
+	</class>
+</hibernate-mapping>

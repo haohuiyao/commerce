@@ -1,0 +1,16 @@
+
+
+<div class="ui-tabs">
+	
+	<div class="btn-pre tab-btn"><<</div>
+	
+	<ul class="transiton-all-03">
+		<li ng-repeat="item in tabs" ng-class="item.className" watch-Loading-Pics-Over ui-sref="{{ item.sref }}" >
+			<a ng-bind="item.name">首页</a>
+			<i class="ion-close-round" ng-click="onClickRemove($index)" ng-if="item.name != '首页' "></i>
+		</li>
+		
+	</ul>
+	
+	<div class="btn-next tab-btn">>></div>
+</div>

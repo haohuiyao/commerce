@@ -1,0 +1,32 @@
+
+
+<div ng-click="toGoodsDetail()">
+	<!--横向-->
+	<div ng-show="!showlist" class="ub goodsListItem-li" data-id = "{{showlist}}">
+		<div class="ub-f1 goodsListItem-lf">
+			<back-img imageurl="goodsInfo.goodsImage" defaulturl="../../../assets/images/test/test-product-1.png"></back-img>
+			<!--<img src="../../../assets/images/test/test-product-1.png" />-->
+		</div>
+		<div class="ub-f1 goodsListItem-rg">
+			<div class="goodsListItem-rg-name" ng-bind="goodsInfo.goodsTitle">小松pc200-7 s6d102 pn291喷漆嘴 杰克赛尔 日本产</div>
+			<div class="goodsListItem-rg-price">
+				<span class="price-lf">¥</span>
+				<span class="price-rg" ng-bind="goodsInfo.goodsPrice">100.00</span>
+			</div>
+		</div>
+		<i class="shoppingCart" ng-click="addCart($event)"></i>
+	</div>
+	<!--纵向-->
+	<div ng-show="showlist" class="goodsListItem-fl">
+		<div class="goodsListItem-fl-con">
+			<div class="goodsListItem-fl-pic">
+				<back-img imageurl="goodsInfo.goodsImage" defaulturl="../../../assets/images/test/test-product-1.png"></back-img>
+				<!--<img src="../../../assets/images/test/test-product-1.png" />-->
+			</div>
+			<div>
+				<div class="goodsListItem-fl-name" ng-bind="goodsInfo.goodsTitle">小松pc200-7 s6d102 pn291喷漆嘴 杰克赛尔 日本产</div>
+				<div class="goodsListItem-fl-price" ><span>¥</span><span ng-bind="goodsInfo.goodsPrice">100.00</span></div>
+			</div>
+		</div>
+	</div>
+</div>

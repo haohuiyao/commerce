@@ -1,0 +1,32 @@
+
+<!--
+    @产品货源
+    @create by daipengpeng
+    @time 2017/07/24
+-->
+<div class="modal" id="editProductSource">
+    <!--主体-->
+    <div class="modal-main">
+        <!--模态框头部-->
+        <div class="modal-header">
+            <h2 ng-bind="dataModel.modalTitle"></h2>
+            <span></span>
+        </div>
+        <!--模态框内容-->
+        <div class="modal-body">
+
+            <!--管理员名称-->
+            <div class="form-li">
+                <div class="form-item-container form-item-full">
+                    <form-input form-obj="formObj.sourceName" form-model="dataModel.sourceName"></form-input>
+                </div>
+            </div>
+
+        </div>
+        <!--模态框底部-->
+        <div class="modal-bottom">
+            <a class="ripple" ng-click="submitEditSource()">保存</a>
+        </div>
+    </div>
+
+</div>

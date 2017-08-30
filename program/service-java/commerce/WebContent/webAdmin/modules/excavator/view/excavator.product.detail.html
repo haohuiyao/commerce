@@ -1,0 +1,66 @@
+<!--
+    机型组详情
+-->
+<link rel="stylesheet" href="modules/excavator/assets/css/excavator.css">
+
+<div class="container">
+
+    <!--title-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>机型组详情</b>
+        <div class="title-btn">
+            <!--<a class="btn btn-default ripple" ng-click="onClickSave()"><i class="ti-plus"></i><span>保存</span></a>-->
+        </div>
+    </div>
+
+    <h2 class="product-h2">基本信息</h2>
+    <div class="bg-color-fff">
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productName" form-model="dataModel.productName"></form-input>
+            </div>
+        </div>
+
+        <div class="form-li">
+            <div class="form-item-container form-item-half">
+                <form-input form-obj="formObj.productBrand" form-model="dataModel.productBrand"></form-input>
+            </div>
+        </div>
+
+    </div>
+
+    <!--具体机型-->
+    <h2 class="product-h2">具体机型</h2>
+    <div class="bg-color-fff">
+        <div class="list-content">
+
+            <div class="table-box">
+
+                <div class="table-scroll">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>名称</th>
+                            <th>状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in dataModel.excavatorModelArr">
+                            <td ng-bind="$index + 1"></td>
+                            <td ng-bind="item.name"></td>
+                            <td>
+                                <span class="btn btn-xs" ng-class="{true:'btn-success', false:'btn-white'}[item.status]" ng-bind="item.statusValue"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table-empty isempty="dataModel.excavatorModelArr.length == 0"></table-empty>
+            </div>
+        </div>
+    </div>
+
+
+</div>

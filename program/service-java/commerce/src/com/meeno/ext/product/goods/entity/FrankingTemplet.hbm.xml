@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.ext.product.goods.entity">
+	<class name="FrankingTemplet" table="mn_franking_templet">
+		<id name="id" type="java.lang.Long" column="ID">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="pattern" type="java.lang.Long" column="PATTERN"
+			length="11" />
+		<property name="fareName" type="java.lang.String" column="FARENAME"
+			length="32" />
+		<property name="postage" type="java.lang.String" column="POSTAGE"
+			length="32" />
+		<property name="dispatching" type="java.lang.String" column="DISPATCHING"
+			length="32" />
+		<property name="baseWeight" type="java.math.BigDecimal"
+			column="BASEWEIGHT" />
+		<property name="basePrice" type="java.math.BigDecimal"
+			column="BASEPRICE" />
+		<property name="addWeight" type="java.math.BigDecimal"
+			column="ADDWEIGHT" />
+		<property name="addPrice" type="java.math.BigDecimal" column="ADDPRICE" />
+		<property name="scope" type="java.lang.String" column="SCOPE"
+			length="10" />
+		<property name="updateTime" type="java.sql.Timestamp" column="UPDATETIME" />
+	</class>
+</hibernate-mapping>

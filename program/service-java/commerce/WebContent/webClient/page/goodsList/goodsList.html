@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>商品列表</title>
+		<link rel="stylesheet" href="../../assets/css/ui.base.css" />
+		<link rel="stylesheet" href="../../assets/css/ui.swiper.css" />
+		<link rel="stylesheet" href="../../angular/directive/backImg/backImg.css" />
+		<link rel="stylesheet" href="../../angular/directive/goodsListItem/goodsListItem.css" />
+		<link rel="stylesheet" href="../../angular/directive/listEmpty/listEmpty.css" />
+		<!--<link rel="stylesheet" href="../../angular/directive/searchItem/searchItem.css" />-->
+		<link rel="stylesheet" href="goodsList.css" />
+	</head>
+	<body ng-controller="ctrl">
+		<div class="container">
+			<div class="search" >
+						<i class="search-icon" ng-click="search()"></i>
+					    <input type="text" placeholder="请输入产品名称、品牌、机型" ng-model="inputValue" >
+					    <i class="search-clear hiddenIm" ng-click="clearInput($event)"></i>
+			</div>
+			<!--<div class="list-sort ub">-->		
+				<!--<div class="ub-f1" ng-click="onClickSort(1)" ng-class="{'true':'font-color','false':''}[dataModel.sortType == 1]">人气</div>
+				<div class="ub-f1" ng-click="onClickSort(2)" ng-class="{'true':'font-color','false':''}[dataModel.sortType == 2]">销量</div>
+				<div class="ub-f1" ng-click="onClickSort(3)" ng-class="{'true':'font-color','false':''}[dataModel.sortType == 3]">新品</div>
+				<div class="ub-f1" ng-click="onClickSort(4)" ng-class="{'true':'font-color','false':''}[dataModel.sortType == 4]">价格<span class="sort-price-icon"><icon-item iconurl="dataModel.priceIcon"></icon-item></span></div>-->
+				
+			<!--</div>-->
+			
+			<div id="float" class="list-filter-fixed">
+				<div class="list-filter ub">
+					<div class="ub-f1 filter-item" ng-click="onClickSelMachineBrand()" ng-class="{'true':'hiddenIm','false':''}[sorce == 1]">
+						<span ng-bind="{'true':'适用机型','false':machineName}[machineName == null]">适用机型</span>
+						<span class="filter-icon">
+							<icon-item iconurl="'../../assets/images/icon/icon-un.png'"></icon-item>
+						</span>
+					</div>
+					<div class="ub-f1 filter-item" ng-click="onClickSelGoodsType()">
+						<span ng-class="{'true':'filter-tab-act','false':''}[dataModel.isFilterGoodsType]" ng-bind="{'true':'商品类型','false':categroyName}[categroyName == null]">商品类型</span>
+						<span class="filter-icon">
+							<icon-item iconurl="{'true':'../../assets/images/icon/icon-up.png','false':'../../assets/images/icon/icon-un.png'}[dataModel.isFilterGoodsType]"></icon-item>
+						</span>
+					</div>
+				<div class="ub-fl change">
+					<span class="sort-list-icon" ng-click="dataModel.islist = !dataModel.islist">
+						<icon-item iconurl="{'false':'../../assets/images/icon/icon-list-cascades.png','true':'../../assets/images/icon/icon-list-copy.png'}[dataModel.islist]"></icon-item>
+					</span>
+				</div>
+					<!--<div class="ub-f1 filter-item" ng-click="onClickSelGoodsSupply()">
+						<span ng-class="{'true':'filter-tab-act','false':''}[dataModel.isFilterGoodsSupply]" ng-bind="{'true':'货源','false':sourceName}[sourceName == null]">货源</span>
+						<span class="filter-icon">
+							<icon-item iconurl="{'true':'../../assets/images/icon/icon-up.png','false':'../../assets/images/icon/icon-un.png'}[dataModel.isFilterGoodsSupply]"></icon-item>
+						</span>
+					</div>-->
+					<div class="ub-f1"></div>
+				</div>
+			</div>
+			
+			<div class="goods-list">
+				<goods-list-item islist="dataModel.islist" ng-repeat="item in dataModel.goodsList" goods-info="item"></goods-list-item>
+			</div>
+			
+			<div class="more" ng-click="toLoadMore()">
+				点击加载更多...
+			</div>
+			<div class="noMore" >
+				没有更多数据了
+			</div>
+			<div class="modal-container" ng-show="dataModel.isFilterGoodsType">
+				<div class="modal-content">
+					<div class="filter-list ub">
+						<div class="filter-list-lf ub-f1">
+							<div ng-class="{'true':'filter-active','false':''}[dataModel.condition.parentCategroy=='']" ng-click="onClickSelAllFirCategory()">全部类型</div>
+							<div ng-repeat="item in dataModel.firCategoriesList" ng-click="onClickSelFirCategory(item.categoryId,item.name)" ng-class="{'true':'filter-active','false':''}[item.isSel]" ng-bind="item.name">全部</div>
+						</div>
+						<div class="filter-list-rg ub-f1 hiddenIm">
+							<div ng-class="{'true':'filter-active','false':''}[dataModel.condition.sonCategory=='']" ng-click="onClickSelSecCategory(oneCategoryId,'')">全部类型</div>
+							<div ng-repeat="item in dataModel.secCategoriesList" ng-click="onClickSelSecCategory(item.categoryId,item.name)" ng-class="{'true':'filter-active','false':''}[item.isSel]" ng-bind="item.name">全部</div>
+						</div>
+					</div>
+					<div class="filter-bo" ng-click="hideFilter()"></div>
+				</div>
+			</div>
+			
+			<div class="modal-container" ng-show="dataModel.isFilterGoodsSupply">
+				<div class="modal-content">
+					<div class="filter-list">
+						<div class="filter-list-item" ng-class="{'true':'filter-active','false':''}[item.isSel]" ng-click="selSorceItem(item.id,item.sourceName)" ng-repeat="item in dataModel.sourceList track by $index" ng-bind="item.sourceName">全部</div>
+					</div>
+					<div class="filter-bo" ng-click="hideFilter()"></div>
+				</div>
+			</div>
+			
+			<!--空列表-->
+			<div class="goods-list-empty" ng-show="dataModel.goodsList.length == 0">
+				<i class="empty-icon">
+					<img src="../../assets/images/icon/icon-empty-1.png" />
+				</i>
+				<div class="empty-title">您寻找的商品还未上架</div>
+				<!--<div class="connect-service" ng-click="connectService()">联系客服</div>-->
+			</div>
+			<!--<list-empty empty-class="goods-list-empty" empty-icon="../../assets/images/icon/icon-empty-1.png" empty-title="您寻找的商品还未上架" limit-arr="dataModel.goodsList"></list-empty>-->
+		
+			<div class="to-top" ng-click="onclickToTop()"></div>
+		
+		</div>
+	</body>
+	
+	
+	<!--libs-->
+	<script src="../../libs/zepto.min.js"></script>
+	<script src="../../libs/angular.min.js"></script>
+	<script src="../../libs/fastclick.js"></script>
+	<script src="../../libs/swiper.min.js"></script>
+	
+	<!--common-->
+	<script src="../../config/mn.config.js"></script>
+	<script src="../../config/mn.config.api.js"></script>
+	<script src="../../config/mn.config.const.js"></script>
+	<script src="../../config/mn.config.text.js"></script>
+	<script src="../../config/mn.config.url.js"></script>
+	<script src="../../config/mn.commonArr.js"></script>
+	<script src="../../common/mn.utility.js"></script>
+	<script src="../../common/mn.loading.js"></script>
+	<script src="../../common/mn.selected.js"></script>
+	<script src="../../common/mn.common.js"></script>
+	
+	<script src="../../http/mn.http.js"></script>
+	<script src="../../http/mn.apiAjaxRequest.js"></script>
+	
+	<script src="../../angular/app.js"></script>
+	<script src="../../angular/directive/backImg/backImg.js"></script>
+	<script src="../../angular/directive/iconItem/iconItem.js"></script>
+	<script src="../../angular/directive/goodsListItem/goodsListItem.js"></script>
+	<script src="../../angular/directive/listEmpty/listEmpty.js"></script>
+	<script src="../../angular/directive/searchItem/searchItem.js"></script>
+	<!--controller-->
+	<script src="goodsList.Controller.js"></script>
+	
+</html>

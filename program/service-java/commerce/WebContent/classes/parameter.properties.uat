@@ -1,0 +1,8 @@
+format.date.style = yyyy-MM-dd
+format.time.style = yyyy-MM-dd HH:mm:ss
+
+app.system.code = default
+
+upload.imgs = http://123.56.240.125:8000/
+upload.dir = /home/webee/pro_file/
+isDebug = false

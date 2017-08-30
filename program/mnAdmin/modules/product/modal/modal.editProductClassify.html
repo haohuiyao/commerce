@@ -1,0 +1,53 @@
+
+<!--
+    @产品分类
+    @create by daipengpeng
+    @time 2017/07/724
+-->
+<div class="modal" id="addProductClassify">
+    <!--主体-->
+    <div class="modal-main">
+        <!--模态框头部-->
+        <div class="modal-header">
+            <h2 ng-bind="dataModel.modalTitle">产品分类</h2>
+            <span></span>
+        </div>
+        <!--模态框内容-->
+        <div class="modal-body">
+
+            <!--管理员名称-->
+            <div class="form-li">
+                <div class="form-item-container form-item-full">
+                    <form-input form-obj="formObj.classifyName" form-model="dataModel.classifyName"></form-input>
+                </div>
+                <div class="form-item-container form-item-full">
+                    <form-input form-obj="formObj.classifyAbbreviation" form-model="dataModel.classifyAbbreviation"></form-input>
+                </div>
+            </div>
+
+            <div class="form-li">
+                <div class="form-item-container form-item-full">
+                    <form-api-select form-obj="formObj.template" form-model="dataModel.template"></form-api-select>
+                </div>
+            </div>
+
+            <div class="form-li">
+                <div class="form-item-container form-item-full">
+                    <div class="form-item">
+                        <div class="form-title f">分类图片：</div>
+                        <div class="form-item-content">
+                            <upload-single url="dataModel.classifyImage"></upload-single>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--模态框底部-->
+        <div class="modal-bottom">
+            <a class="ripple" ng-click="submitEditClassify()">保存</a>
+        </div>
+    </div>
+
+</div>

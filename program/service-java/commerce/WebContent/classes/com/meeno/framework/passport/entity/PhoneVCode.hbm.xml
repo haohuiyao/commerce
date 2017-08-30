@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.framework.passport.entity">
+	<class name="PhoneVCode" table="PHONE_VCODE">
+		<id name="id" type="java.lang.Long" column="ID">
+			<generator class="native">
+	        </generator>
+		</id>
+	
+		<property name="phone" type="java.lang.String" column="PHONE" length="16" />
+		<property name="vCode" type="java.lang.String" column="VERIFY_CODE" length="10" />
+		<property name="vType" type="java.lang.String" column="V_TYPE" length="2" />
+		<property name="createTime" type="java.sql.Timestamp" column="V_CODE_CREATE_TIME" />
+		
+	</class>
+</hibernate-mapping>

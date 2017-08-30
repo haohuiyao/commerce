@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.framework.passport.entity">
+	<class name="MNPPhone" table="MNP_ACC_PHONE">
+		<id name="id" type="java.lang.Long" column="PHONE_PP_ID">
+			<generator class="native">
+	        </generator>
+		</id>
+	
+		<property name="phone" type="java.lang.String" column="PHONE" length="16" />
+		<many-to-one name="account" column="ACCT_UUID" class="com.meeno.framework.passport.entity.MNAccount">
+		</many-to-one>
+	</class>
+</hibernate-mapping>

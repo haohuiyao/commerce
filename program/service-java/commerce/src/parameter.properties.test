@@ -1,0 +1,12 @@
+format.date.style = yyyy-MM-dd
+format.time.style = yyyy-MM-dd HH:mm:ss
+
+app.system.code = default
+
+#upload.imgs = http://192.168.128.111/
+upload.imgs = http://222.90.232.140:8022/
+upload.dir = /usr/local/ebusiness/
+#upload.imgs = http://localhost/8080
+#upload.dir = D://ebusiness
+ffmpeg.dir = /usr/local/ebusiness/ffmpeg/ffmpeg
+isDebug = false

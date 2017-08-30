@@ -1,0 +1,47 @@
+
+<!--
+    @新增产品品牌
+    @create by daipengpeng
+    @time 2017/07/724
+-->
+<div class="modal" id="addProductBrand">
+    <!--主体-->
+    <div class="modal-main">
+        <!--模态框头部-->
+        <div class="modal-header">
+            <h2 ng-bind="dataModel.modalTitle">添加产品品牌</h2>
+            <span></span>
+        </div>
+        <!--模态框内容-->
+        <div class="modal-body">
+
+            <!--名称-->
+            <div class="form-li">
+                <div class="form-item-container form-item-full">
+                    <form-input form-obj="formObj.brandName" form-model="dataModel.brandName"></form-input>
+                </div>
+                <div class="form-item-container form-item-full">
+                    <form-input form-obj="formObj.brandAbbreviation" form-model="dataModel.brandAbbreviation"></form-input>
+                </div>
+            </div>
+
+            <div class="form-li">
+                <div class="form-item-container form-item-full">
+                    <div class="form-item">
+                        <div class="form-title f">品牌图片：</div>
+                        <div class="form-item-content">
+                            <upload-single url="dataModel.brandImage"></upload-single>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--模态框底部-->
+        <div class="modal-bottom">
+            <a class="ripple" ng-click="submitEditBrand()">保存</a>
+        </div>
+    </div>
+
+</div>

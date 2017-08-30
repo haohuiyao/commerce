@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+
+	<tlibversion>1.1</tlibversion>
+	<jspversion>1.2</jspversion>
+	<shortname>meeno</shortname>
+	<uri>http://www.meeno.com/j2ee</uri>
+
+
+<tag>
+	<name>ajaxCutPage</name>
+	<tagclass>com.meeno.framework.tag.AjaxCutPageTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>formName</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>isExistForm</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>actionUrl</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>offerPageSize</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>pageNum</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>pageBean</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>isOuterForm</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>showAreal</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>queryFunction</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>pageId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>displayMethod</name>
+	<tagclass>com.meeno.framework.tag.PermitMethodTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>methodName</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>moduleUrl</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>displayMenuMethod</name>
+	<tagclass>com.meeno.framework.tag.PermitMenuMethodTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>menuId</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>methodName</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>moduleUrl</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>tabPage</name>
+	<tagclass>com.meeno.framework.tag.TabPageTag</tagclass>
+	<bodycontent>jsp</bodycontent>
+</tag>
+<tag>
+	<name>receiveImage</name>
+	<tagclass>com.meeno.framework.tag.ReceiveImageTag</tagclass>
+	<bodycontent>empty</bodycontent>
+</tag>
+<tag>
+	<name>out</name>
+	<tagclass>com.meeno.framework.tag.PrintStringTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>size</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>encode</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>decode</name>
+	<tagclass>com.meeno.framework.tag.PrintDecodeTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>result</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>firstValue</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>secondValue</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>dicOut</name>
+	<tagclass>com.meeno.framework.tag.PrintDictionaryNameTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>category</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>dictionarys</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag>
+	<name>select</name>
+	<tagclass>com.meeno.framework.tag.PrintSelectTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>dataList</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>style</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>id</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>onChange</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>cssClass</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>valueMethod</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>textMethod</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>ifDisabled</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>dicSelect</name>
+	<tagclass>com.meeno.framework.tag.PrintDictionarySelectTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>category</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>ifPlease</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>id</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>cssClass</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>radio</name>
+	<tagclass>com.meeno.framework.tag.PrintDictionaryRadioTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>category</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>id</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>cssClass</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>urlEncode</name>
+	<tagclass>com.meeno.framework.tag.UrlEncodeTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag>
+	<name>urlDecode</name>
+	<tagclass>com.meeno.framework.tag.UrlDecodeTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>value</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+</taglib>
+

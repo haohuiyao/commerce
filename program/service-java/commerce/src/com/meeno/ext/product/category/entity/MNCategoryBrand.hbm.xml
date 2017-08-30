@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.ext.product.category.entity">
+	<class name="MNCategoryBrand" table="mn_create_brand_detail">
+		<id name="id" type="java.lang.Long" column="ID">
+			<generator class="native">
+			</generator>
+		</id>
+		<many-to-one name="category"
+			class="com.meeno.ext.product.category.entity.MNCategory" not-null="false">
+			<column name="CATEGORY_ID" />
+		</many-to-one>
+
+		<many-to-one name="brand" column="BRAND_ID"
+			class="com.meeno.ext.product.brand.entity.Brand">
+		</many-to-one>
+	</class>
+</hibernate-mapping>

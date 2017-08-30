@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="keywords" content="挖配网管理后台" />
+	<meta name="description" content="挖配网管理后台" />
+
+	<link rel="stylesheet" href="build/css/mn.base.css" />
+	<link rel="stylesheet" href="build/css/mn.main.css" />
+	<link rel="stylesheet" href="app/modules/header/header.css"/>
+	<link rel="stylesheet" href="app/modules/nav/nav.css"/>
+	<link rel="stylesheet" href="app/modules/tab/tab.css">
+
+	<!--libs-->
+	<script src="app/libs/jquery.min.js"></script>
+	<script src="app/libs/angular.min.js"></script>
+	<script src="app/libs/angular-ui-router.min.js"></script>
+	<script src="app/libs/angular-ocLazy-load.min.js"></script>
+	<script src="app/libs/oss-full-min.js"></script>
+
+	<!--config-->
+	<script src="projectConfig.js"></script>
+	<script src="build/config/mn.config.text.js"></script>
+	<script src="build/config/mn.config.const.js"></script>
+	<script src="build/config/mn.config.url.js"></script>
+
+	<!--common-->
+	<script src="build/common/mn.ossUpload.js"></script>
+	<script src="build/common/mn.common.js"></script>
+	<script src="build/common/mn.fn.js"></script>
+
+	<!--http-->
+	<script src="build/http/mn.http.js"></script>
+
+	<!--app-->
+	<script src="app/app.js"></script>
+	<script src="app/app.router.js"></script>
+
+	<!--component-->
+	<script src="app/component/tableEmpty/tableEmpty.js"></script>
+	<script src="app/component/pagination/pagination.js"></script>
+	<script src="app/component/pagination/PaginationController.js"></script>
+	<script src="app/component/tableList/tableList.js"></script>
+	<script src="app/component/formInput/formInput.js"></script>
+	<script src="app/component/formSelect/formSelect.js"></script>
+	<script src="app/component/formApiSelect/formApiSelect.js"></script>
+	<script src="app/component/twoLevel/twoLevel.js"></script>
+	<script src="app/component/uploadSingle/uploadSingle.js"></script>
+	<script src="app/component/uploadMultiple/uploadMultiple.js"></script>
+	<script src="app/component/edit/kindeditor-min.js"></script>
+	<script src="app/component/edit/zh-CN.js"></script>
+	<script src="app/component/edit/editor.js"></script>
+	<script src="app/component/paramTemplate/paramTemplate.js"></script>
+	<script src="app/component/multistageSelect/multistageSelect.js"></script>
+	<script src="app/component/classifySelect/classifySelect.js"></script>
+	<script src="app/component/machineList/machineList.js"></script>
+
+	<!--controller-->
+	<script src="app/modules/header/Header.Controller.js"></script>
+	<script src="app/modules/nav/Nav.Controller.js"></script>
+	<script src="app/controller/Home.Controller.js"></script>
+
+
+</head>
+<body ng-controller="HomeCtrl">
+	<!--header-->
+	<div ng-include="'app/modules/header/header.html'"></div>
+
+	<!--nav-->
+	<div ng-include="'app/modules/nav/nav.html'"></div>
+
+	<!--modPwd-->
+	<div ng-include="'app/modules/modal/modal.mod.pwd.html'"></div>
+
+	<!--main-->
+	<div class="main-container">
+		<div ng-include="'app/modules/tab/tab.html'"></div>
+
+		<div ui-view="" class="main-content"></div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://rm-yjhcloud.mysql.rds.aliyuncs.com:3311/ebusiness_prd?useUnicode=true&amp;characterEncoding=utf8
+jdbc.username=ejh_tangyu
+jdbc.password=EjhTangYu#2016!@#
+hibernate.dialect=com.meeno.framework.util.MysqlDialect
+jdbc.initialSize=5
+jdbc.minIdle=5
+jdbc.maxIdle=10
+jdbc.maxActive=40
+jdbc.maxWait=1000
+jdbc.removeAbandoned=true
+jdbc.removeAbandonedTimeout=180
+jdbc.testOnReturn=false
+jdbc.testOnBorrow=true
+jdbc.validationQuery=SELECT 1 FROM FW_DUTY
+jdbc.logAbandoned=true
+jdbc.testWhileIdle = true
+jdbc.timeBetweenEvictionRunsMillis = 300000
+jdbc.minEvictableIdleTimeMillis = 320000

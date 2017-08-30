@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>商品详情</title>
+		<link rel="stylesheet" href="../../assets/css/ui.base.css" />
+		<link rel="stylesheet" href="../../assets/css/ui.swiper.css" />
+		<link rel="stylesheet" href="../../angular/directive/iconItem/iconItem.css" />
+		<link rel="stylesheet" href="../../angular/directive/backImg/backImg.css" />
+		<link rel="stylesheet" href="../../angular/directive/goodsListItem/goodsListItem.css" />
+		<!--<link rel="stylesheet" href="../component/guessLike.css" />-->
+		<link rel="stylesheet" href="goodsDetail.css" />
+		<!--<link rel="stylesheet" href="goodsExplain.css" />-->
+	</head>
+
+	<body ng-controller="ctrl">
+		<div class="container">
+
+			<div class="goods-detail-head">
+				<div class="head-container">
+					<i class="head-back" ng-click="onClickBack()"><icon-item iconurl="'../../assets/images/icon/icon-right-2.png'"></icon-item></i>
+					<!--<i class="head-news"><i class="count"><span>99</span></i><icon-item iconurl="'../../assets/images/icon/icon-news-gray.png'"></icon-item></i>-->
+					<i class="head-home" ng-click="onClickHome()"><icon-item iconurl="'../../assets/images/icon/icon-home-black.png'"></icon-item></i>
+					<div class="head-content">
+						<h3>商品详情</h3></div>
+				</div>
+			</div>
+
+			<div class="goods-detail-content">
+				<!--banner-->
+				<div class="banner">
+
+					<i class="circular-back" ng-click="onClickBack()"><icon-item iconurl="'../../assets/images/icon/icon-circular-back.png'"></icon-item></i>
+					<i class="circular-news" ng-click="onClickHome()"><icon-item iconurl="'../../assets/images/icon/icon-circular-home.png'"></icon-item></i>
+					<!--<i class="circular-news" ng-click="onClickMsg()"><icon-item iconurl="'../../assets/images/icon/icon-circular-news.png'"></icon-item></i>-->
+					<!--<i class="circular-share" ng-click="onclickShare()"></i>-->
+
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" ng-repeat="item in dataModel.goodsInfo.bannerArr track by $index" on-finish-render-filters="1">
+								<div class="banner-item" ng-click="showBigImg(dataModel.goodsInfo.bannerArr,$index)">
+									<back-img imageurl="item" defaulturl="../../assets/images/default/default-goods-banner.png"></back-img>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+
+				<!--价格、名称-->
+				<div class="info">
+					<div class="info-name" ng-bind="dataModel.goodsInfo.title">小松 200-7 200-8 310 S6D102 PN291喷油嘴 杰克赛尔 日本产</div>
+					<!--<div class="info-price">
+						<div class="f price">¥ <span ng-bind="dataModel.goodsInfo.price">1890.00</span></div>
+						<div class="r sales-count">总销量 <span ng-bind="dataModel.goodsInfo.sales">0</span></div>
+					</div>-->
+					<div class="ub rebate">
+						<div class="ub-f1 point-act"></div>
+						<div class="ub-f1">购买可获得2%返利</div>
+					</div>
+					<div class="explain-1" ng-click="toGoodsDesc()">
+						<div class="point-item"></div>
+						<div class="explain-item-1">挖配自营产品</div>
+						<div class="point-item"></div>
+						<div class="explain-item-1">售后无忧</div>
+						<div class="point-item"></div>
+						<div class="explain-item-1">100%实拍</div>
+					</div>
+				</div>
+
+				<!--产品参数-->
+				<div class="parameter">
+					<div class="parameter-head">
+						<div>产品参数</div>
+					</div>
+					<div class="parameter-list">
+						<div class="parameter-item ub">
+							<div class="ub-f1 parameter-item-lf">产品名称</div>
+							<div class="ub-f1 parameter-item-rg" ng-bind="dataModel.goodsInfo.name">喷油嘴</div>
+						</div>
+						<div class="parameter-item ub">
+							<div class="ub-f1 parameter-item-lf">产地</div>
+							<div class="ub-f1 parameter-item-rg" ng-bind="dataModel.goodsInfo.place">喷油嘴</div>
+						</div>
+						<div class="parameter-item ub">
+							<div class="ub-f1 parameter-item-lf">品牌</div>
+							<div class="ub-f1 parameter-item-rg" ng-bind="dataModel.goodsInfo.partsBrand">喷油嘴</div>
+						</div>
+						<!--<div class="parameter-item ub">
+							<div class="ub-f1 parameter-item-lf">大类</div>
+							<div class="ub-f1 parameter-item-rg" ng-bind="dataModel.goodsInfo.parentCategoryName">喷油嘴</div>
+						</div>
+						<div class="parameter-item ub">
+							<div class="ub-f1 parameter-item-lf">细类</div>
+							<div class="ub-f1 parameter-item-rg" ng-bind="dataModel.goodsInfo.sonCategoryName">喷油嘴</div>
+						</div>-->
+						<!--<div class="parameter-item ub">
+							<div class="ub-f1 parameter-item-lf">货源</div>
+							<div class="ub-f1 parameter-item-rg" ng-bind="dataModel.goodsInfo.sorceName">喷油嘴</div>
+						</div>-->
+						<div class="parameter-item ub">
+							<div class="ub-f1 parameter-item-lf">适用机型</div>
+							<div class="ub-f1 parameter-item-rg">
+								<div >
+									<span ng-bind="dataModel.goodsInfo.modelBrand + ':'">品牌名：</span>
+									<span ng-repeat="item in dataModel.goodsInfo.brandInfoList" ng-bind="item.name" style="margin-left: 5px;">330A</span>
+								</div>
+							</div>
+						</div>
+						<div class="parameter-item ub" ng-repeat="item in dataModel.goodsInfo.paramsValue track by $index">
+							<div class="ub-f1 parameter-item-lf" ng-bind="item.name">产品名称</div>
+							<div class="ub-f1 parameter-item-rg" ng-bind="item.value">喷油嘴</div>
+						</div>
+					</div>
+				</div>
+
+				<!--商品评价-->
+				<div class="evaluate list-con" ng-show="isCommentEmpty">
+					<div class="evaluate-head ub" ng-click="cbClickCommentDetail()">
+						<div class="ub-f1">商品评价</div>
+						<div class="ub-f1 evaluate-head-arrow">
+							<icon-item iconurl="'../../assets/images/icon/icon-right.png'"></icon-item>
+						</div>
+					</div>
+					<div class="evalua-content">
+
+						<!--评论head-->
+						<div>
+							<div class="content-top ub">
+								<div class="ub-f1 content-top-lf">
+									<div ng-repeat="item in dataModel.commentStarsArr track by $index"><i ng-class="item"></i></div>
+								</div>
+								<div class="ub-f1 content-top-md"><span ng-bind="dataModel.commentStars">4</span>分</div>
+								<div class="ub-f1 content-top-rg"><span ng-bind="dataModel.commentCount">366</span>人评价</div>
+							</div>
+							<div class="content-tag">
+								<span ng-repeat="item in dataModel.commentLable">
+									<em ng-bind="item.label"></em>
+									<em>(</em>
+									<em ng-bind="item.click"></em>
+									<em>)</em>
+								</span>
+							</div>
+						</div>
+
+						<!--商品评论-->
+						<div ng-repeat="item in dataModel.commentList" ng-init="outerIndex = $index">
+							<div class="evaluate-item ub">
+								<div class="evaluate-item-lf ub-f1">
+									<span class="item-head-icon">
+										<back-img imageurl="item.userImg" defaulturl="../../assets/images/default/default-head-icon.jpeg"></back-img>
+									</span>
+								</div>
+								<div class="evaluate-item-rg ub-f1">
+									<div class="item-rg-top clear-fix">
+										<div class="f" ng-bind="item.name">玩那个车</div>
+										<div class="r" ng-bind="item.name">2017-07-09</div>
+									</div>
+									<div class="item-score clear-fix">
+										<div class="f"><i ng-class="{'true':'star-act','false':'star-item'}[item.stars > 0]"></i></div>
+										<div class="f"><i ng-class="{'true':'star-act','false':'star-item'}[item.stars > 1]"></i></div>
+										<div class="f"><i ng-class="{'true':'star-act','false':'star-item'}[item.stars > 2]"></i></div>
+										<div class="f"><i ng-class="{'true':'star-act','false':'star-item'}[item.stars > 3]"></i></div>
+										<div class="f"><i ng-class="{'true':'star-act','false':'star-item'}[item.stars > 4]"></i></div>
+									</div>
+									<div class="item-tag clear-fix">
+										<span ng-repeat="item2 in item.label" ng-bind="item2"></span>
+									</div>
+									<div class="item-desc" ng-bind="item.comment">评论详情</div>
+									<div class="item-pic clear-fix">
+										<div ng-repeat="item2 in item.imgs" ng-click="showBigImg(item.imgs,$index)">
+											<back-img imageurl="item2" defaulturl="../../assets/images/default/default-comment-pic.png"></back-img>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="more" ng-click="cbClickCommentDetail()">查看更多</div>
+				</div>
+
+				<!--查看图文详情-->
+				<div class="show-more-detail">
+					<span class="show-more-up"><icon-item iconurl="'../../assets/images/icon/icon-up-black.png'"></icon-item></span>
+					<span>继续拖动查看图文详情</span>
+				</div>
+
+				<!--图文详情-->
+				<div class="goods-detail">
+
+				</div>
+
+				<!--猜你喜欢-->
+				<!--<div class="guess-like">
+					<div class="guess-head">- 猜你喜欢 -</div>
+					<div class="goods-list">
+						<goods-list-item islist="false" ng-repeat="item in dataModel.guessList" goods-info="item"></goods-list-item>
+					</div>
+				</div>-->
+
+				<!--操作-->
+				<!--<div class="action">
+		        	<div class="ub">
+		        		<div id='bool' style="background-image: url({{dataModel.goodsInfo.displayImg}});"></div>
+			        	<div id='target'></div>
+			        	<div class="ub-f1 action-icon" ng-click="onclickMessage()">
+			        		<div class="action-ask action-icon-top"></div>
+			        		<div class="action-icon-txt action-ask-color">咨询</div>
+			        	</div>
+			        	<div class="ub-f1 action-icon" ng-class="{'true':'action-has-like','false':'action-un-like'}[dataModel.isCollect]" ng-click="onClickCollectGoods()">
+			        		<div class="action-icon-top"></div>
+			        		<div class="action-icon-txt" ng-bind="{'true':'已收藏','false':'收藏'}[dataModel.isCollect]">收藏</div>
+			        	</div>
+			        	<div class="ub-f1 action-icon action-bo-no" ng-click="toShoppingCart()">
+			        		<div class="action-cart action-icon-top">
+			        			<span class="cart-num" ng-bind="cartCount" ng-show="cartCount != 0">9</span>
+			        		</div>
+			        		<div class="action-icon-txt">购物车</div>
+			        	</div>
+			        	<div class="ub-f1 action-m-l">
+			        		<div class="ub action-rg">
+			        			<div class="ub-f1 action-add" ng-click="addCart()">加入购物车</div>
+			        			<div class="ub-f1 action-buy" ng-click="buyNow()">立即购买</div>
+			        		</div>
+			        	</div>
+		        		
+		        	</div>
+		        </div>-->
+			</div>
+			
+		</div>
+		<div class="goodsExplain">
+				<div class="explain-bg" ng-click="closeModal()"></div>
+				<div class="explain explain_slideUp">
+					<div class="explain-head">说明</div>
+					<div class="explain-item ub">
+						<div class="ub-f1 explain-item-lf">
+							<i></i>
+						</div>
+						<div class="ub-f1 explain-item-rg">
+							<div class="explain-item-rg-top">购买返现</div>
+							<div class="explain-item-rg-bo">在挖配网下单购买成功后，获订单的实付金额的2%返现</div>
+						</div>
+					</div>
+					<div class="explain-item ub">
+						<div class="ub-f1 explain-item-lf">
+							<i></i>
+						</div>
+						<div class="ub-f1 explain-item-rg">
+							<div class="explain-item-rg-top">挖配自营产品</div>
+							<div class="explain-item-rg-bo">此商品是挖配自营，品质保证</div>
+						</div>
+					</div>
+					<div class="explain-item ub">
+						<div class="ub-f1 explain-item-lf">
+							<i></i>
+						</div>
+						<div class="ub-f1 explain-item-rg">
+							<div class="explain-item-rg-top">售后无忧</div>
+							<div class="explain-item-rg-bo">挖配在全国分布多个网点，为您提供快速便捷的售后</div>
+						</div>
+					</div>
+					<div class="explain-item ub">
+						<div class="ub-f1 explain-item-lf">
+							<i></i>
+						</div>
+						<div class="ub-f1 explain-item-rg">
+							<div class="explain-item-rg-top">100%实拍</div>
+							<div class="explain-item-rg-bo">全部产品均由挖配摄影团队实品拍摄</div>
+						</div>
+					</div>
+
+					<div class="explain-konw" ng-click="closeModal()">
+						<div>知道了</div>
+					</div>
+				</div>
+			</div>
+	</body>
+
+	<!--libs-->
+	<script src="../../libs/zepto.min.js"></script>
+	<script src="../../libs/angular.min.js"></script>
+	<script src="../../libs/fastclick.js"></script>
+	<script src="../../libs/swiper.min.js"></script>
+	<script src="../../libs/parabola.js"></script>
+	<!--<script src="../../mnBirdge/mnwebmain.js"></script>-->
+
+	<!--common-->
+	<script src="../../config/mn.config.js"></script>
+	<script src="../../config/mn.config.api.js"></script>
+	<script src="../../config/mn.config.const.js"></script>
+	<script src="../../config/mn.config.text.js"></script>
+	<script src="../../config/mn.config.url.js"></script>
+	<script src="../../config/mn.commonArr.js"></script>
+	<script src="../../common/mn.utility.js"></script>
+	<script src="../../common/mn.loading.js"></script>
+	<script src="../../common/mn.enum.js"></script>
+
+	<script src="../../http/mn.http.js"></script>
+	<script src="../../http/mn.apiAjaxRequest.js"></script>
+
+	<script src="../../angular/app.js"></script>
+	<script src="../../angular/directive/iconItem/iconItem.js"></script>
+	<script src="../../angular/directive/backImg/backImg.js"></script>
+	<script src="../../angular/directive/goodsListItem/goodsListItem.js"></script>
+
+	<!--controller-->
+	<script src="goods.Detail.Controller.js"></script>
+	<script src="../../common/mn.common.js"></script>
+
+</html>

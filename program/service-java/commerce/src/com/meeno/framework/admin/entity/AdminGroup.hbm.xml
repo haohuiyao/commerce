@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-7-24 12:13:49 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.meeno.framework.admin.entity">
+	<class name="AdminGroup" table="mn_admin_group">
+		<id name="id" type="java.lang.Long" column="GROUP_ID">
+			<generator class="native">
+	        </generator>
+		</id>
+		<property name="privileges" type="java.lang.String" column="GROUP_PRIVILEGES"/>
+		<property name="groupName" type="java.lang.String" column="GROUP_NAME" />
+	</class>
+</hibernate-mapping>

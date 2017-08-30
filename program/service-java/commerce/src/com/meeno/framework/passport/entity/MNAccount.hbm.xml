@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.framework.passport.entity">
+	<class name="MNAccount" table="MNP_ACCOUNT">
+		<id name="uuid" type="java.lang.String" column="UUID">
+			<generator class="uuid.hex">
+	        </generator>
+		</id>
+	
+		<property name="status" type="java.lang.String" column="STATUS" length="8" />
+		
+	</class>
+</hibernate-mapping>

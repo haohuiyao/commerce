@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.ext.product.goods.entity">
+	<class name="MNSku" table="mn_sku">
+		<id name="id" type="java.lang.Long" column="SKU_ID">
+			<generator class="native">
+			</generator>
+		</id>
+
+		<property name="createTime" type="java.sql.Timestamp" column="CREATE_TIME" />
+		<property name="paramsValue" type="java.lang.String" column="PARAMS_VALUE" />
+		<property name="adaptation" type="java.lang.String" column="ADAPTATION" />
+		<property name="picture" type="java.lang.String" column="PICTURE" />
+		<property name="code" type="java.lang.String" column="CODE" />
+		<property name="status" type="java.lang.String" column="STATUS" />
+		<property name="detail" type="java.lang.String" column="DETAIL" />
+		<property name="skuName" type="java.lang.String" column="SKU_NAME" />
+		<property name="weight" type="java.lang.String" column="WEIGHT" />
+		<property name="displayImg" type="java.lang.String" column="DISPLAY_IMG" />
+		<property name="summary" type="java.lang.String" column="SUMMARY" />
+		<property name="volume" type="java.lang.String" column="VOLUME" />
+		
+		<many-to-one name="brand" lazy="false" column="BRAND_ID"
+			class="com.meeno.ext.product.brand.entity.Brand">
+		</many-to-one>
+		<many-to-one name="product" column="PRODUCT_ID" lazy="false"
+			class="com.meeno.ext.product.goods.entity.MNProduct">
+		</many-to-one>
+
+		<many-to-one name="paramTemplate" column="TEMPLATE_ID"
+			lazy="false" class="com.meeno.ext.product.template.entity.MNParamTemplate">
+		</many-to-one>
+	</class>
+</hibernate-mapping>

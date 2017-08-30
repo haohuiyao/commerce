@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>专题外链</title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<img src="img/1.jpg" class="link" data-id = "179"/>
+		<img src="img/2.jpg" class="link" data-id = "179"/>
+		<img src="img/3.jpg" class="link" data-id = "179"/>
+		<img src="img/4.jpg" class="link" data-id = "179"/>
+		<img src="img/5.jpg" class="link" data-id = "179"/>
+		<img src="img/6.jpg" class="link" data-id = "179"/>
+		<img src="img/7.jpg" class="link" data-id = "179"/>
+		<img src="img/8.jpg" class="link" data-id = "179"/>
+		<img src="img/9.jpg" class="link" data-id = "179"/>
+		<img src="img/10.jpg" class="link" data-id = "179"/>
+		<img src="img/11.jpg" class="link" data-id = "179"/>
+		<img src="img/12.jpg" class="link" data-id = "179"/>
+	</body>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/mnwebmain.js"></script>
+	<script src="js/const.js"></script>
+	<script>
+		initMN(function(){
+			
+			$(".link").on('click',function(){
+				var shelvesId = $(this).attr('data-id')
+				var URL = URL_GOODS_DETAIL + "?shelvesId=" + shelvesId;
+            	
+            	var baseParam = {
+	                "url" : URL,
+	                "isHideNavBar" : 1,
+	                "titleType" : 0
+	            };
+	            var centerParam = [{"type" : 0,"param" : "商品详情"}];
+	            var leftParam = [{"leftType":0, "type" : 1 ,"param" : "btn_arrow_lf"}];
+	            var rightParam = [{"type" : 0,"param" : "分享"},{"type" : 0,"param" : "消息"}];
+	
+	            mnWebMain.openWebViewController(baseParam,leftParam,centerParam,rightParam);
+			})
+		})
+	</script>
+</html>

@@ -1,0 +1,18 @@
+<div class="header" ng-controller="HeaderController">
+	<div class="header-logo">
+		<div class="logo-icon"></div>
+		<div>銘诺网络</div>
+	</div>
+	<div class="header-name">銘诺后台管理系统</div>
+	<div class="header-right">
+		当前用户：<span ng-bind="adminName"></span>
+		<i class="ti-angle-down"></i>
+		<ul class="slidedownBox">
+			<li><a ng-click="onClickToModifyPwd()">修改密码</a></li>
+			<li><a ng-click="onClickLogout()">退出登录</a></li>
+		</ul>
+	</div>
+	<div class="header-right-account">
+		<i style="background-image: url('build/images/public/logo.png');"></i>
+	</div>
+</div>

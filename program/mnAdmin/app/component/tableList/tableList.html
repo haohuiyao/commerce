@@ -1,0 +1,122 @@
+
+<div>
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>学生管理</b>
+        <div class="title-btn">
+            <a class="btn btn-default ripple" ng-click="onClickAdd()"><i class="ti-plus"></i><span>添加</span></a>
+        </div>
+    </div>
+    <!--search-->
+    <div class="search">
+        <div class="search-item" ng-if="searchObj.inputSearch.length != 0">
+            <div class="search-single-input" ng-repeat="item in searchObj.inputSearch">
+                <label class="wh-60" ng-bind="item.name">学号:</label>
+                <span class="search-input">
+                    <input type="text" ng-model="searchObj.sno"/>
+                </span>
+            </div>
+
+            <a ng-click="onClickSearch()"><i class="ti-search"></i></a>
+        </div>
+
+        <div class="search-item" ng-if="searchObj.defaultClickSearch.length != 0">
+            <div class="search-single-click" ng-repeat="item in searchObj.defaultClickSearch">
+                <div class="search-click-lf" ng-bind="item.name">品牌：</div>
+                <div class="search-click-li">
+                    <span ng-repeat="item2 in item.optArr" ng-bind="item2.optName">haha</span>
+                </div>
+            </div>
+        </div>
+        <div class="search-item" ng-if="searchObj.apiClickSearch.length != 0">
+            <div class="search-single-click" ng-repeat="item in searchObj.apiClickSearch">
+                <div class="search-click-lf" ng-bind="item.name">品牌：</div>
+                <div class="search-click-li">
+                    <span ng-repeat="item2 in item.optArr" ng-bind="item2.optName">haha</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-content">
+
+        <div class="table-box">
+
+            <div class="table-scroll">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>学校</th>
+                        <th>地区</th>
+                        <th>首字母</th>
+                        <th>比赛数</th>
+                        <th>球队数</th>
+                        <!--<th>球员数</th>-->
+                        <th>创建日期</th>
+                        <th></th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>
+                            <a class="btn btn-white btn-xs" ng-click="onClickSort(0,item)"><i class="ti-arrow-up"></i></a>
+                            <a class="btn btn-white btn-xs" ng-click="onClickSort(1,item)"><i class="ti-arrow-down"></i></a>
+                        </td>
+                        <td>
+                            <a class="btn btn-xs btn-warning-border" ng-click="onClickItemMod(item)">修改</a>
+                            <a class="btn btn-xs btn-danger-border" ng-click="onClickItemDel(item.id)">删除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>
+                            <a class="btn btn-white btn-xs" ng-click="onClickSort(0,item)"><i class="ti-arrow-up"></i></a>
+                            <a class="btn btn-white btn-xs" ng-click="onClickSort(1,item)"><i class="ti-arrow-down"></i></a>
+                        </td>
+                        <td>
+                            <a class="btn btn-xs btn-warning-border" ng-click="onClickItemMod(item)">修改</a>
+                            <a class="btn btn-xs btn-danger-border" ng-click="onClickItemDel(item.id)">删除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>11</td>
+                        <td>
+                            <a class="btn btn-white btn-xs" ng-click="onClickSort(0,item)"><i class="ti-arrow-up"></i></a>
+                            <a class="btn btn-white btn-xs" ng-click="onClickSort(1,item)"><i class="ti-arrow-down"></i></a>
+                        </td>
+                        <td>
+                            <a class="btn btn-xs btn-warning-border" ng-click="onClickItemMod(item)">修改</a>
+                            <a class="btn btn-xs btn-danger-border" ng-click="onClickItemDel(item.id)">删除</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table-empty isempty="isEmpty"></table-empty>
+        </div>
+
+        <my-pagination page-option="pageOption"></my-pagination>
+
+    <!--</div>-->
+</div>

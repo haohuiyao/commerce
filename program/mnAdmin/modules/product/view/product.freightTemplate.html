@@ -1,0 +1,60 @@
+<!--
+    产品运费模板
+    create by daipengpeng
+    2017/07/24
+-->
+<div class="container">
+
+    <!--title-->
+    <div class="title">
+        <i class="title-icon ion-grid"></i>
+        <b>运费模板</b>
+        <div class="title-btn">
+            <a class="btn btn-default ripple" ng-click="onClickAdd()"><i class="ti-plus"></i><span>添加</span></a>
+        </div>
+    </div>
+
+    <!--列表-->
+    <div class="list-content">
+
+        <div class="table-box">
+
+            <div class="table-scroll">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>配送方式</th>
+                        <th>配送区域</th>
+                        <th>首</th>
+                        <th>首付</th>
+                        <th>续</th>
+                        <th>续费</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in dataModel.list">
+                        <td ng-bind="item.index"></td>
+                        <td ng-bind="item.dispatching"></td>
+                        <td ng-bind="item.scope"></td>
+                        <td ng-bind="item.baseWeight"></td>
+                        <td ng-bind="item.basePrice"></td>
+                        <td ng-bind="item.addWeight"></td>
+                        <td ng-bind="item.addPrice"></td>
+                        <td>
+                            <a class="btn btn-default ripple" ng-click="onClickMod(item)">修改</a>
+                            <a class="btn btn-danger ripple" ng-click="onClickDel(item.id)">删除</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <table-empty isempty="isEmpty"></table-empty>
+        </div>
+
+    </div>
+
+    <div ng-include="'modules/product/modal/modal.editProductFreightTemplate.html'"></div>
+
+</div>

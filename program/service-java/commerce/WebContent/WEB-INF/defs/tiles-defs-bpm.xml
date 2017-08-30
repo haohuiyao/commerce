@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<!-- Base Tiles Definition -->
+	<definition name="base.definition" template="/WEB-INF/jsp/ebusiness/front/main/frontCommon.jsp">
+		<put-attribute name="front.title" type="string" value="医家护 "/>
+		<put-attribute name="front.header" type="template" value="/WEB-INF/jsp/ebusiness/front/main/header.jsp" />
+		<put-attribute name="front.body" type="template" value="/WEB-INF/jsp/ebusiness/front/main/front_body.jsp" />
+		<put-attribute name="front.footer" type="template" value="/WEB-INF/jsp/ebusiness/front/main/footer.jsp" />
+	</definition>
+	
+	<definition name="page.member.welcome" template="/WEB-INF/jsp/ebusiness/front/memberinfo/memberCommon.jsp">
+		<put-attribute name="front.title" type="string" value="个人中心" />
+		<put-attribute name="front.header" type="template" value="/WEB-INF/jsp/ebusiness/front/main/user_header.jsp" />
+		<put-attribute name="front.leftMenu" type="template" value="/WEB-INF/jsp/ebusiness/front/memberinfo/member_info_welcome_left.jsp" />
+		<put-attribute name="front.rightMenu" type="template" value="/WEB-INF/jsp/ebusiness/front/memberinfo/member_info_welcome_right.jsp" />
+		<put-attribute name="front.footer" type="template" value="/WEB-INF/jsp/ebusiness/front/main/footer.jsp" />
+	</definition>
+	
+	<definition name="page.user.welcome" template="/WEB-INF/jsp/ebusiness/front/memberinfo/memberCommon.jsp">
+		<put-attribute name="front.title" type="string" value="个人中心" />
+		<put-attribute name="front.header" type="template" value="/WEB-INF/jsp/ebusiness/front/main/user_header.jsp" />
+		<put-attribute name="front.rightMenu" type="template" value="/WEB-INF/jsp/ebusiness/front/memberinfo/member_info_welcome_right.jsp" />
+		<put-attribute name="front.footer" type="template" value="/WEB-INF/jsp/ebusiness/front/main/footer.jsp" />
+	</definition>
+	
+	<definition name="page.no.department.list" extends="base.definition">
+		<put-attribute name="front.title" type="string"  value="未加入科室" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/front/memberinfo/member_info_welcome_right.jsp" />
+	</definition>
+	
+	<definition name="page.member.memberInfo" extends="page.member.welcome">
+		<put-attribute name="front.title" value="个人中心" />
+		<put-attribute name="front.rightMenu" type="template" value="/WEB-INF/jsp/ebusiness/front/memberinfo/member_info.jsp" />
+	</definition>
+	<definition name="page.homePage.article" extends="base.definition">
+		<put-attribute name="front.title" value="文章详情" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/front/homePage/article_info.jsp" />
+	</definition>
+	
+	<definition name="page.homePage.more" extends="base.definition">
+		<put-attribute name="front.title" value="服务列表" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/front/serviceinfo/service_info_list.jsp" />
+	</definition>
+	
+	<definition name="page.homePage.serviceInfo" extends="base.definition">
+		<put-attribute name="front.title" value="服务详情" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/front/serviceinfo/service_info.jsp" />
+	</definition>
+	<definition name="page.member.register" extends="base.definition">
+		<put-attribute name="front.title" value="注册" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/front/memberinfo/member_register.jsp" />
+	</definition>
+	<definition name="page.member.register.success" extends="base.definition">
+		<put-attribute name="front.title" type="string"  value="注册成功" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/front/memberinfo/register_success.jsp" />
+	</definition>
+
+	<definition name="page.forgetPassword.list" extends="base.definition">
+		<put-attribute name="front.title" type="string"  value="忘记密码" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/front/memberinfo/forgetPassword.jsp" />
+	</definition>
+	<definition name="page.forgetPassword.success" extends="base.definition">
+		<put-attribute name="front.title" type="string"  value="忘记密码成功" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/front/memberinfo/forgetPasswordSuccess.jsp" />
+	</definition>
+	<definition name="page.forgetPasswordActive.list" extends="base.definition">
+		<put-attribute name="front.title" type="string"  value="忘记密码请求成功" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/front/memberinfo/modifyPassword.jsp" />
+	</definition>
+	<definition name="page.forget.changePassword.init" extends="base.definition">
+		<put-attribute name="front.title" value="修改密码" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/wainchem/front/changePassword.jsp" />
+	</definition>
+	<definition name="page.forget.changePassword.success" extends="base.definition">
+		<put-attribute name="front.title" value="修改密码成功" />
+		<put-attribute name="front.body"  value="/WEB-INF/jsp/ebusiness/front/memberinfo/forgetPasswordSuccess.jsp" />
+	</definition>
+	<definition name="page.login" extends="base.definition">
+		<put-attribute name="front.title" value="登录" />
+		<put-attribute name="front.body" value="/WEB-INF/jsp/ebusiness/login.jsp" />
+		<put-attribute name="front.footer" type="template" value="/WEB-INF/jsp/ebusiness/front/main/login_footer.jsp" />
+	</definition>
+	<definition name="page.about.yjh" extends="base.definition">
+		<put-attribute name="front.title" value="关于医家护" />
+		<put-attribute name="front.body"  value="/WEB-INF/jsp/ebusiness/front/memberinfo/about_yjh.jsp" />
+	</definition>
+	<definition name="page.user.yjh" extends="base.definition">
+		<put-attribute name="front.title" value="产品-患者端" />
+		<put-attribute name="front.body"  value="/WEB-INF/jsp/ebusiness/front/memberinfo/user_yjh.jsp" />
+	</definition>
+	<definition name="page.nurse.yjh" extends="base.definition">
+		<put-attribute name="front.title" value="产品-医护端" />
+		<put-attribute name="front.body"  value="/WEB-INF/jsp/ebusiness/front/memberinfo/nurse_yjh.jsp" />
+	</definition>
+</tiles-definitions>

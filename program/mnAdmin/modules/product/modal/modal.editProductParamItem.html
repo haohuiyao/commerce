@@ -1,0 +1,71 @@
+
+<!--
+    @产品参数
+    @create by daipengpeng
+    @time 2017/07/24
+-->
+<div class="modal" id="editProductParamItem">
+    <!--主体-->
+    <div class="modal-main">
+        <!--模态框头部-->
+        <div class="modal-header">
+            <h2 ng-bind="dataModel.modalTitle">添加产品品牌</h2>
+            <span></span>
+        </div>
+        <!--模态框内容-->
+        <div class="modal-body">
+
+            <div class="form-li">
+                <div class="form-item-container form-item-half">
+                    <form-select form-obj="formObj.paramType" form-model="dataModel.paramType"></form-select>
+                </div>
+                <div class="form-item-container form-item-half">
+                    <form-select form-obj="formObj.paramOptional" form-model="dataModel.paramOptional"></form-select>
+                </div>
+            </div>
+
+            <div class="form-li">
+                <div class="form-item-container form-item-half">
+                    <form-input form-obj="formObj.paramTitle" form-model="dataModel.paramTitle"></form-input>
+                </div>
+                <div class="form-item-container form-item-half">
+                    <form-input form-obj="formObj.paramHint" form-model="dataModel.paramHint"></form-input>
+                </div>
+            </div>
+
+            <div ng-show="dataModel.isShowParamOption">
+
+                <div class="btn btn-danger mgl-2" ng-click="addOptionItem()">添加选项</div>
+
+                <div class="form-li" ng-repeat="item in dataModel.paramOptionArr">
+                    <div class="form-item-container">
+                        <div class="form-item">
+                            <div class="f form-title" >
+                                <div>选项{{$index + 1}}：</div>
+                            </div>
+                            <div class="form-input-full">
+                                <input type="text" class="form-control" ng-model="item.name"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="f">
+                        <div class="btn btn-danger" style="margin-top: 18px" ng-click="delOptionItem($index)">删除</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-li">
+                <div class="form-item-container form-item-half">
+                    <form-select form-obj="formObj.paramStatus" form-model="dataModel.paramStatus"></form-select>
+                </div>
+            </div>
+
+
+        </div>
+        <!--模态框底部-->
+        <div class="modal-bottom">
+            <a class="ripple" ng-click="submitEditParamItem()">保存</a>
+        </div>
+    </div>
+
+</div>

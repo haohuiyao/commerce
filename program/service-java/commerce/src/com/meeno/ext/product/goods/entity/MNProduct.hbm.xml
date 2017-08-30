@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.meeno.ext.product.goods.entity">
+	<class name="MNProduct" table="mn_product">
+		<id name="id" type="java.lang.Long" column="PRODUCT_ID">
+			<generator class="native">
+			</generator>
+		</id>
+
+		<property name="name" type="java.lang.String" column="NAME"
+			length="64" />
+		<property name="summary" type="java.lang.String" column="SUMMARY"
+			length="255" />
+		<property name="detail" type="java.lang.String" column="DETAIL" />
+		<property name="createTime" type="java.sql.Timestamp" column="CREATE_TIME" />
+		<property name="modifyTime" type="java.sql.Timestamp" column="MODIFY_TIME" />
+		<property name="paramsValue" type="java.lang.String" column="PARAMS_VALUE" />
+		<property name="place" type="java.lang.String" column="PLACE" />
+		<property name="code" type="java.lang.String" column="CODE" />
+		<property name="cost" type="java.math.BigDecimal" column="COST" />
+		<property name="displayImg" type="java.lang.String" column="DISPLAY_IMG" />
+		<property name="picture" type="java.lang.String" column="PICTURE" />
+		<property name="weight" type="java.lang.String" column="WEIGHT" />
+		<property name="volume" type="java.lang.String" column="VOLUME" />
+		<property name="status" type="java.lang.String" column="STATUS"
+			not-null="true" length="6" />
+		<property name="currency" type="java.lang.String" column="CURRENCY" />
+		<property name="common" type="java.lang.String" column="COMMON" />
+		<many-to-one name="paramTemplate" column="TEMPLATE_ID"
+			class="com.meeno.ext.product.template.entity.MNParamTemplate">
+		</many-to-one>
+
+		<many-to-one name="category" lazy="false" column="CATEGORY_ID"
+			class="com.meeno.ext.product.category.entity.MNCategory">
+		</many-to-one>
+
+		<many-to-one name="franking" column="CARRIAGEID"
+			class="com.meeno.ext.product.goods.entity.FrankingTemplet">
+		</many-to-one>
+
+		<many-to-one name="brand" lazy="false" column="PRODUCT_BRAND_ID"
+			class="com.meeno.ext.product.brand.entity.Brand">
+		</many-to-one>
+		<many-to-one name="source" lazy="false" column="SOURCE_ID"
+			class="com.meeno.ext.product.goods.entity.Source">
+		</many-to-one>
+
+	</class>
+</hibernate-mapping>

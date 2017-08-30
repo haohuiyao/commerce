@@ -1,0 +1,146 @@
+/*@header@*/
+
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e4ee;
+    z-index: 111;
+}
+
+.header-logo{
+    float: left;
+    width: 205px;
+    height: 70px;
+    background-color: #00B38B;
+    overflow: hidden;
+    padding: 0 12px;
+}
+
+.header-logo div{
+    display: inline-block;
+    vertical-align: middle;
+    color: #ffffff;
+}
+
+.logo-icon{
+    height: 70px;
+    width: 40px;
+    background-image: url("../../../build/images/public/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.header-logo img{
+    float: left;
+    display: block;
+    width: 40px;
+    margin-top: 15px;
+}
+
+.header-logo span{
+    float: left;
+    display: block;
+    line-height: 70px;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.header-name{
+    float: left;
+    line-height: 70px;
+    padding-left: 10px;
+    font-size: 23px;
+    color: #454545;
+}
+
+.header-right{
+    cursor: pointer;
+    float: right;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 20px;
+    color: #333;
+    padding-right: 10px;
+}
+
+.header-right-account{
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.header-right-account i{
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+.header-right i.ti-angle-down{
+    position: relative;
+    vertical-align: middle;
+    top: -1px;
+    margin-left: 5px;
+}
+
+.header-right span{
+    color: #999;
+    padding-left: 5px;
+}
+
+.header-right:hover .slidedownBox{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.slidedownBox{
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    width: 84px;
+    box-shadow: 0 0 10px #e7e6e6;
+    background: #fff;
+    overflow: hidden;
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slidedownBox li{
+    font-size: 14px;
+    border-top: 1px solid #e4e4e4;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 12px;
+    margin-top: -1px;
+}
+
+.slidedownBox li a {
+    color: #454545;
+}
+
+.slidedownBox li a:hover {
+    color: #f23e47;
+}
